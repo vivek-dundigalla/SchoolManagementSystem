@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <menuitem id="menu_school" name="School Management System" />
+    <menuitem id="menu_school_transport" name="Transport" parent="menu_school"/>
+    <menuitem id="menu_school_transport_drivers" name="Drivers" action="action_school_driver" parent="menu_school_transport"/>
+</odoo>
