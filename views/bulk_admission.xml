@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <record id="view_bulk_admission_form" model="ir.ui.view">
+       <field name="name">Bulk Admission</field>
+       <field name="model">users.bulk</field>
+       <field name="arch" type="xml">
+           <form string="Bulk Students Admission Form">
+                <header>
+                    <button name="single_student_admission" string="Single Student Admission" type="object" class="oe_highlight"/>
+                                               </header>
+                                                              <header>
+                    <button name="bulk_student_admission" string="Bulk Student Admission" type="object" class="oe_highlight"/>
+                                               </header>
+
+               <sheet>
+                   <group>
+                       <field name="student_name"/>
+                       <field name="student_email"/>
+                       <field name="student_password" widget="password" password="True"/>
+                       <field name="parent"/>
+                       <field name="student_class_number"/>
+                       <field name="student_section_ABC"/>
+                   </group>
+
+               </sheet>
+           </form>
+       </field>
+   </record>
+
+
+
+
+   <record id="view_admission_list_bulk" model="ir.ui.view">
+       <field name="name">admission.bulk.list</field>
+       <field name="model">users.bulk</field>
+       <field name="arch" type="xml">
+           <list string="Bulk Student Admission">
+               <field name="student_name"/>
+               <field name="student_email"/>
+               <field name="student_password"/>
+               <field name="student_class_number"/>
+               <field name="student_section_ABC"/>
+               <field name="parent"/>
+           </list>
+       </field>
+   </record>
+
+
+
+
+
+
+   <record id="action_bulk_admission_form" model="ir.actions.act_window">
+       <field name="name">Bulk Admission</field>
+       <field name="res_model">users.bulk</field>
+       <field name="view_mode">form</field>
+   </record>
+
+
+</odoo>

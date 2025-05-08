@@ -2,3 +2,12 @@ from . import school_drivers
 from . import assign_students
 from . import vechicle
 from . import teachers
+from . import parent
+from . import accountant
+from . import librarian
+from . import events
+from . import gallerybatch
+from . import galleryimage
+from . import managealumini
+from . import admission
+from . import bulk_admission

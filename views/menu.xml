@@ -10,7 +10,25 @@
     <menuitem id="menu_transport_assign" name="Assign Students" action="action_transport_assign"
               parent="menu_school_transport"/>
     <menuitem id="menu_school_Users" name="Users" parent="menu_school" sequence="20"/>
+            <menuitem id="menu_school_admission" name="Admission" action="action_admission_form" parent="menu_school_Users"/>
+
         <menuitem id="menu_users_teachers" name="Teachers" action="action_users_teachers" parent="menu_school_Users"/>
+    <menuitem id="menu_users_parents" name="Parents" action="action_users_parent" parent="menu_school_Users"/>
+        <menuitem id="menu_users_accountant" name="Accountants" action="action_users_accountant" parent="menu_school_Users"/>
+            <menuitem id="menu_users_librarian" name="Librarian" action="action_users_librarian" parent="menu_school_Users"/>
+    <menuitem id="menu_school_Alumini" name="Alumini" parent="menu_school" sequence="30"/>
+    <menuitem id="menu_alumini_manage" name="Manage Alumini" action="action_alumini_manage" parent="menu_school_Alumini"/>
+
+                <menuitem id="menu_users_events" name="Events" action="action_users_event" parent="menu_school_Alumini"/>
+             <menuitem id="menu_alumini_gallery_batch" name="Gallery" action="action_gallery_batches" parent="menu_school_Alumini"/>
+
+
+
+
+
+
+
+
 
 
 </odoo>

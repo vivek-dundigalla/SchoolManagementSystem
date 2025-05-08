@@ -34,6 +34,19 @@
             </list>
         </field>
     </record>
+<!--         <record id="view_teachers_search" model="ir.ui.view">-->
+<!--        <field name="name">teachers.search</field>-->
+<!--        <field name="model">users.teachers</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search string="teachers">-->
+<!--                                        <field name="teacher_name"/>-->
+<!--                        <field name="department"/>-->
+<!--                        <field name="designation"/>-->
+<!--                        <field name="phone_number  "/>-->
+
+<!--            </search>-->
+<!--        </field>-->
+<!--         </record>-->
 
 
     <record id="action_users_teachers" model="ir.actions.act_window">
