@@ -11,5 +11,6 @@
             "views/view_driver.xml",
             "views/view_vechicle.xml",
             "views/view_assign_students.xml",
+            "views/view_teachers.xml",
             "views/menu.xml", ],
 }

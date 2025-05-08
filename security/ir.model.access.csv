@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_school_drivers,access_school_drivers,model_school_drivers,,1,1,1,1
 access_transport_vechicle,access_transport_vechicle,model_transport_vechicle,,1,1,1,1
 access_transport_assign,access_transport_assign,model_transport_assign,,1,1,1,1
+access_users_teachers,access_users_teachers,model_users_teachers,,1,1,1,1
