@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_admission_form" model="ir.ui.view">
+        <field name="name">Admission</field>
+        <field name="model">school.admissions</field>
+        <field name="arch" type="xml">
+            <form string="Student Admissions Form">
+                <sheet>
+                    <group>
+                        <field name="student_name"/>
+                        <field name="student_email"/>
+                        <field name="student_password"/>
+                        <field name="parent"/>
+                        <field name="student_class"/>
+                        <field name="student_dob"/>
+                        <field name="student_gender"/>
+                        <field name="student_blood_group"/>
+                        <field name="student_address"/>
+                        <field name="student_number"/>
+                    </group>
+                     <field name="student_image" widget="image" class="oe_avatar"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

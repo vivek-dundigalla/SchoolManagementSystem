@@ -9,5 +9,7 @@
               parent="menu_school_transport"/>
     <menuitem id="menu_transport_assign" name="Assign Students" action="action_transport_assign"
               parent="menu_school_transport"/>
+    <menuitem id="menu_school_users" name="Users" parent="menu_school"/>
+
 
 </odoo>
