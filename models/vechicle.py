@@ -16,11 +16,11 @@ class Drivers(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Create Driver',
-            'res_model': 'transport.vechicle',  # replace with your actual model name
+            'res_model': 'transport.vechicle',
             'view_mode': 'form',
-            'target': 'new',  # use 'current' if you want full screen instead of popup
+            'target': 'new',
             'context': {
-                'default_vehicle_id': self.id  # optional: set default field values
+                'default_vehicle_id': self.id
             }
         }
 

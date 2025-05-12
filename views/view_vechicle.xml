@@ -1,50 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <!-- Form View -->
     <record id="view_vechicle_form" model="ir.ui.view">
         <field name="name">transport.vechicle.form</field>
         <field name="model">transport.vechicle</field>
         <field name="arch" type="xml">
             <form string="Vechicles">
-                                <header>
+                <header>
                     <button name="action_create_vehicle" string="+ Create Vechicle" type="object" class="oe_highlight"/>
                 </header>
-<sheet>
+                <sheet>
                     <group>
                         <field name="number"/>
                         <field name="vh_number"/>
-                       <field name="vh_model"/>
-                       <field name="capacity"/>
+                        <field name="vh_model"/>
+                        <field name="capacity"/>
                         <field name="route"/>
-
-
-
 
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-        <record id="view_vechicle_list" model="ir.ui.view">
+    <record id="view_vechicle_list" model="ir.ui.view">
         <field name="name">vechicle</field>
         <field name="model">transport.vechicle</field>
         <field name="arch" type="xml">
             <list string="vechicle">
-                        <field name="number"/>
-                        <field name="vh_number"/>
-                       <field name="vh_model"/>
-                       <field name="capacity"/>
-                        <field name="route"/>
-
-
+                <field name="number"/>
+                <field name="vh_number"/>
+                <field name="vh_model"/>
+                <field name="capacity"/>
+                <field name="route"/>
 
 
             </list>
         </field>
     </record>
 
-
-    <!-- Action -->
     <record id="action_transport_vechicle" model="ir.actions.act_window">
         <field name="name">Vechicle</field>
         <field name="res_model">transport.vechicle</field>

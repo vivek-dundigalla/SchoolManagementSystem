@@ -6,4 +6,4 @@ class GalleryBatch(models.Model):
 
     name = fields.Char("name", required=True)
     description = fields.Text("Description")
-    image = fields.Binary(  string="Images")
+    file = fields.Binary(  string="Images")

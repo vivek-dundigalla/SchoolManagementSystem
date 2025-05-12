@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class bulkAdmissiom(models.Model):
     _name = "users.bulk"
 
-    student_name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
+    student_name = fields.Many2one( comodel_name="res.partner",string="Student Name", tracking=True)
     student_email = fields.Char(string="Email", tracking=True)
     student_password = fields.Char(string="Password", password=True)
     parent = fields.Many2one(comodel_name="res.partner", string="Parent", tracking=True)
@@ -35,11 +35,11 @@ class bulkAdmissiom(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Bulk Student Admission',
-            'res_model': 'users.bulk',  # replace with your actual model name
+            'res_model': 'users.bulk',
             'view_mode': 'form',
-            'target': 'current',  # use 'current' if you want full screen instead of popup
+            'target': 'current',
             'context': {
-                'default_student_id': self.id  # optional: set default field values
+                'default_student_id': self.id
             }
         }
 
@@ -47,10 +47,18 @@ class bulkAdmissiom(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Single Sudent Admission',
-            'res_model': 'school.admission',  # replace with your actual model name
+            'res_model': 'school.admission',
             'view_mode': 'form',
-            'target': 'current',  # use 'current' if you want full screen instead of popup
-            'context': {
-                'default_student_id': self.id  # optional: set default field values
-            }
+            'target': 'current',
+
+
+        }
+
+    def add_students(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'bulk Student Admission',
+            'res_model': 'student.line',
+            'view_mode': 'form',
+            'target': 'current',
         }

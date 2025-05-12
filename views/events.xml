@@ -48,7 +48,6 @@
         <field name="name">Events</field>
         <field name="res_model">users.events</field>
         <field name="view_mode">calendar,list,form</field>
-<!--        <field name="view_id" ref="view_teacher_list"/>-->
     </record>
 
 </odoo>

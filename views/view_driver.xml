@@ -26,6 +26,7 @@
             <list string="Drivers">
                 <field name="driver_s_no"/>
                 <field name="driver_image" widget="image" options="{'size': [64, 64]}" class="oe_avatar"/>
+
                 <field name="driver_name"/>
                 <field name="driver_email"/>
                 <field name="driver_number"/>

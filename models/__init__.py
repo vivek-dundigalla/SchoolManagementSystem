@@ -11,3 +11,13 @@ from . import galleryimage
 from . import managealumini
 from . import admission
 from . import bulk_admission
+from . import student_lines
+from . import academic_class
+from . import academic_room
+from . import department
+from . import subject
+from . import routine
+from . import timetable
+from . import book_list_manager
+from . import noticeboard
+from . import subjectlines

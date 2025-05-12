@@ -42,11 +42,11 @@ class admissions(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Create Driver',
-            'res_model': 'school.admission',  # replace with your actual model name
+            'res_model': 'school.admission',
             'view_mode': 'form',
-            'target': 'current',  # use 'current' if you want full screen instead of popup
+            'target': 'current',
             'context': {
-                'default_student_id': self.id  # optional: set default field values
+                'default_student_id': self.id
             }
         }
 
@@ -54,10 +54,10 @@ class admissions(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Bulk Student Admission',
-            'res_model': 'users.bulk',  # replace with your actual model name
+            'res_model': 'users.bulk',
             'view_mode': 'form',
-            'target': 'current',  # use 'current' if you want full screen instead of popup
+            'target': 'current',
             'context': {
-                'default_student_id': self.id  # optional: set default field values
+                'default_student_id': self.id
             }
         }

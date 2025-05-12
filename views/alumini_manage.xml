@@ -45,7 +45,6 @@
         <field name="name">AluminiManage</field>
         <field name="res_model">alumini.manage</field>
         <field name="view_mode">list,form</field>
-<!--        <field name="view_id" ref="view_teacher_list"/>-->
     </record>
 
 </odoo>

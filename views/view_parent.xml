@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <!-- Form View -->
     <record id="view_teacher_form" model="ir.ui.view">
         <field name="name">users.parent.form</field>
         <field name="model">users.parents</field>
         <field name="arch" type="xml">
             <form string="Parents">
-<sheet>
+                <sheet>
                     <group>
                         <field name="parent_id"/>
-                <field name="parent_image" widget="image" class="oe_avatar"/>
-                       <field name="parent_name"/>
-                       <field name="email"/>
+                        <field name="parent_image" widget="image" class="oe_avatar"/>
+                        <field name="parent_name"/>
+                        <field name="email"/>
                         <field name="phone_number"/>
-
-
 
 
                     </group>
@@ -22,26 +19,22 @@
             </form>
         </field>
     </record>
-        <record id="view_parent_list" model="ir.ui.view">
+    <record id="view_parent_list" model="ir.ui.view">
         <field name="name">Parent</field>
         <field name="model">users.parents</field>
         <field name="arch" type="xml">
             <list string="Parent">
                 <field name="parent_id"/>
-                <field name="parent_image"/>
-                       <field name="parent_name"/>
-                       <field name="email"/>
-                        <field name="phone_number"/>
-
-
+                <field name="parent_image" widget="image" class="oe_avatar"/>
+                <field name="parent_name"/>
+                <field name="email"/>
+                <field name="phone_number"/>
 
 
             </list>
         </field>
     </record>
 
-
-    <!-- Action -->
     <record id="action_users_parent" model="ir.actions.act_window">
         <field name="name">Parent</field>
         <field name="res_model">users.parents</field>

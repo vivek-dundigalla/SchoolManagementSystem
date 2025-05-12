@@ -16,10 +16,10 @@ class Teachers(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Create Teacher',
-            'res_model': 'users.teachers',  # replace with your actual model name
+            'res_model': 'users.teachers',
             'view_mode': 'form',
-            'target': 'new',  # use 'current' if you want full screen instead of popup
+            'target': 'new',
             'context': {
-                'default_teacher_id': self.id  # optional: set default field values
+                'default_teacher_id': self.id
             }
         }

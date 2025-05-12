@@ -13,10 +13,10 @@ class AssignStudents(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Assign students',
-            'res_model': 'transport.assign',  # replace with your actual model name
+            'res_model': 'transport.assign',
             'view_mode': 'form',
-            'target': 'new',  # use 'current' if you want full screen instead of popup
+            'target': 'new',
             'context': {
-                'default_vehicle_id': self.id  # optional: set default field values
+                'default_vehicle_id': self.id
             }
         }
