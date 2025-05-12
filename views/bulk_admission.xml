@@ -1,58 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-   <record id="view_bulk_admission_form" model="ir.ui.view">
-       <field name="name">Bulk Admission</field>
-       <field name="model">users.bulk</field>
+
+
+   <record id="view_bulk_student_admission_form" model="ir.ui.view">
+       <field name="name">bulk.student.admission.form</field>
+       <field name="model">bulk.student.admission</field>
        <field name="arch" type="xml">
-           <form string="Bulk Students Admission Form">
-                <header>
-                    <button name="single_student_admission" string="Single Student Admission" type="object" class="oe_highlight"/>
-                    <button name="bulk_student_admission" string="Bulk Student Admission" type="object" class="oe_highlight"/>
-                              <button name = "add_students" string="add" type = "object" class="oe_highlight" style="width:20;"/>
+           <form string="Bulk Student Admission">
+               <header>
+                   <button name="action_confirm_bulk_admission" string="Confirm Admission" type="object" class="btn-primary"/>
+                   <button string="Cancel" class="btn-secondary" special="cancel"/>
                </header>
-
-
                <sheet>
                    <group>
-                       <field name="student_name"/>
-                       <field name="student_email"/>
-                       <field name="student_password" widget="password" password="True"/>
-                       <field name="parent"/>
-                       <field name="student_class_number"/>
-                       <field name="student_section_ABC"/>
+                       <field name="name" invisible="1"/>
+                       <field name="admission_line_ids">
+                           <list editable="bottom">
+                               <field name="class_number"/>
+                               <field name="section"/>
+                               <field name="name"/>
+                               <field name="email"/>
+                               <field name="password" widget="password" password="True"/>
+                               <field name="gender"/>
+                               <field name="parent_id"/>
+                           </list>
+                       </field>
                    </group>
-
                </sheet>
            </form>
        </field>
    </record>
 
 
-
-
-   <record id="view_admission_list_bulk" model="ir.ui.view">
-       <field name="name">admission.bulk.list</field>
-       <field name="model">users.bulk</field>
-       <field name="arch" type="xml">
-           <list string="Bulk Student Admission">
-               <field name="student_name"/>
-               <field name="student_email"/>
-               <field name="student_password"/>
-               <field name="student_class_number"/>
-               <field name="student_section_ABC"/>
-               <field name="parent"/>
-           </list>
-       </field>
-   </record>
-
-
-
-
-
-
-   <record id="action_bulk_admission_form" model="ir.actions.act_window">
-       <field name="name">Bulk Admission</field>
-       <field name="res_model">users.bulk</field>
+   <record id="action_bulk_student_admission" model="ir.actions.act_window">
+       <field name="name">Bulk Student Admission</field>
+       <field name="res_model">bulk.student.admission</field>
        <field name="view_mode">form</field>
    </record>
 

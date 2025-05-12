@@ -11,7 +11,9 @@ access_alumini_gallery_image,access_alumini_gallery_image,model_alumini_gallery_
 access_alumini_gallery_batch,access_alumini_gallery_batch,model_alumini_gallery_batch,,1,1,1,1
 access_alumini_manage,access_alumini_manage,model_alumini_manage,,1,1,1,1
 access_school_admission,access_school_admission,model_school_admission,,1,1,1,1
-access_users_bulk,access_users_bulk,model_users_bulk,,1,1,1,1
+access_bulk_student_admission,access_bulk_student_admission,model_bulk_student_admission,,1,1,1,1
+access_bulk_student_admission_line,access_bulk_student_admission_line,model_bulk_student_admission_line,,1,1,1,1
+
 access_student_line,access_student_line,model_student_line,,1,1,1,1
 access_student_line,access_student_line,model_student_line,,1,1,1,1
 access_academic_class,access_academic_class,model_academic_class,,1,1,1,1
@@ -24,6 +26,11 @@ access_academic_timetable,access_academic_timetable,model_academic_timetable,,1,
 access_library_book,access_academic_library_book,model_library_book,,1,1,1,1
 access_back_notice,access_back_notice,model_back_notice,,1,1,1,1
 access_academic_subjectlines,access_academic_subjectlines,model_academic_subjectlines,,1,1,1,1
+access_examination_exam,access_examination_exam,model_examination_exam,,1,1,1,1
+access_school_student,access_school_student,model_school_student,,1,1,1,1
+
+
+
 
 
 

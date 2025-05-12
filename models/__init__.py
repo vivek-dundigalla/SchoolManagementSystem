@@ -21,3 +21,5 @@ from . import timetable
 from . import book_list_manager
 from . import noticeboard
 from . import subjectlines
+from . import Exams
+from . import student

@@ -29,5 +29,7 @@
             "views/view_book_list.xml",
             "views/noticeboard.xml",
             "views/subjectlines.xml",
+            "views/exam.xml",
+            "views/View_student.xml",
             "views/menu.xml", ],
 }

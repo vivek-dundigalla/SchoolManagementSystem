@@ -1,17 +1,13 @@
-
-
 from odoo import models, fields, api
 
 
-
-class admissions(models.Model):
+class Admission(models.Model):
     _name = "school.admission"
 
     student_name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
     student_email = fields.Char(string="Email", tracking=True)
     student_password = fields.Char(string="Password", password=True)
     parent = fields.Many2one(comodel_name="res.partner", string="Parent", tracking=True)
-    # student_class = fields.Selection([("Class Ten", "Class Ten"), ("Class Nine", "Class Nine"), ("Class Eight", "Class Eight"), ("Class Seven", "Class Seven"), ("Class Six", "Class Six"), ("Class Five", "Class Five"), ("Class Four", "Class Four"), ("Class Three", "Class Three"), ("Class Two", "Class Two"), ("Class One", "Class one")], "Class" , tracking=True,)
     student_class_number = fields.Selection([
         ("Class Ten", "Class Ten"),
         ("Class Nine", "Class Nine"),
@@ -28,15 +24,17 @@ class admissions(models.Model):
     student_section_ABC = fields.Selection([
         ("A", "A"),
         ("B", "B"),
-        ("C", "C")], "Section" , tracking=True,)
+        ("C", "C")], string="Section", tracking=True)
 
     student_dob = fields.Datetime(string="Date of Birth", tracking=True)
-    student_gender = fields.Selection([("male", "Male"), ("female", "Female")], "Gender" , tracking=True,)
-    student_blood_group = fields.Selection([("A+", "A+"), ("A-", "A-"), ("B+", "B+"), ("B-", "B-"), ("AB+", "AB+"), ("AB-", "AB-"), ("O+", "O+"), ("O-", "O-")], "Blood group" , tracking=True,)
+    student_gender = fields.Selection([("male", "Male"), ("female", "Female")], string="Gender", tracking=True)
+    student_blood_group = fields.Selection([
+        ("A+", "A+"), ("A-", "A-"), ("B+", "B+"), ("B-", "B-"),
+        ("AB+", "AB+"), ("AB-", "AB-"), ("O+", "O+"), ("O-", "O-")
+    ], string="Blood group", tracking=True)
     student_address = fields.Char(string="Address")
     student_number = fields.Char(string="Mobile Number")
     student_image = fields.Binary(string="Student Profile Image")
-
 
     def single_student_admission(self):
         return {
@@ -54,10 +52,31 @@ class admissions(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Bulk Student Admission',
-            'res_model': 'users.bulk',
+            'res_model': 'bulk.student.admission',
             'view_mode': 'form',
             'target': 'current',
             'context': {
                 'default_student_id': self.id
             }
         }
+
+    @api.model
+    def create(self, vals):
+        admission = super().create(vals)
+
+        self.env['school.student'].create({
+            'name': admission.student_name.name,
+            'email': admission.student_email,
+            'password': admission.student_password,
+            'parent_id': admission.parent.id if admission.parent else False,
+            'class_number': admission.student_class_number,
+            'section': admission.student_section_ABC,
+            'dob': admission.student_dob,
+            'gender': admission.student_gender,
+            'blood_group': admission.student_blood_group,
+            'address': admission.student_address,
+            'mobile_number': admission.student_number,
+            'image': admission.student_image,
+        })
+
+        return admission
