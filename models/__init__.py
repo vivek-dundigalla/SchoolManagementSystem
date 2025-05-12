@@ -23,3 +23,10 @@ from . import noticeboard
 from . import subjectlines
 from . import Exams
 from . import student
+from . import expensecategory
+from . import expensemanager
+from . import booksissue
+from .import issue
+from . import grades
+from . import studentfeemanager
+from . import feemanager

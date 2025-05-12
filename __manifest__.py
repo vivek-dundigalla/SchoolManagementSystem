@@ -31,5 +31,12 @@
             "views/subjectlines.xml",
             "views/exam.xml",
             "views/View_student.xml",
+            "views/expense.xml",
+            "views/expense_manager.xml",
+            "views/issue.xml",
+            "views/bookissue.xml",
+            "views/grades.xml",
+            "views/student_feemanager.xml",
+            "views/fee_manager.xml",
             "views/menu.xml", ],
 }
