@@ -38,5 +38,13 @@
             "views/grades.xml",
             "views/student_feemanager.xml",
             "views/fee_manager.xml",
+            "views/mass_invoice.xml",
+            "views/syllabus.xml",
+            "views/syllabusdetails.xml",
+            "views/online_courses.xml",
+            "views/coursedetails.xml",
+            "views/school_settings.xml",
+            # "views/marks.xml",
+            # "views/mark_lines.xml",
             "views/menu.xml", ],
 }

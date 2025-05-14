@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_academic_subject_form" model="ir.ui.view">
+    <record id="view_subject_form" model="ir.ui.view">
         <field name="name">academic.subject.form</field>
         <field name="model">academic.subject</field>
         <field name="arch" type="xml">
-            <form string="Academic Subject">
+            <form string="Subjects">
                 <header>
-                    <button name="add_subject" string="Add Routine" type="object" class="oe_highlight"/>
+                    <button name="add_subject" string="Add Subject" type="object" class="oe_highlight"/>
 
                 </header>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="standard"></field>
+                        <field name="standard_name"/>
+
                     </group>
-                    <xpath expr="//field[@name='standard']" position="after">
+                    <xpath expr="//field[@name='standard_name']" position="after">
                         <button name="filter_subject" string="Filter" type="object" class="oe_highlight"/>
 
                     </xpath>
                 </sheet>
+
             </form>
         </field>
     </record>
@@ -26,9 +27,9 @@
         <field name="name">academic.subject.list</field>
         <field name="model">academic.subject</field>
         <field name="arch" type="xml">
-            <list string="Academic Subject">
-                <field name="standard"/>
-                <field name="name"/>
+            <list string="Subject">
+                <field name="standard_name"/>
+
             </list>
         </field>
 

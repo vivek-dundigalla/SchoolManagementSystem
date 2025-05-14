@@ -11,7 +11,7 @@
                 <group>
                     <field name="name"/>
                     <field name="description"/>
-                    <field name="file"/>
+                    <field name="file" filename="filename" widget="image"/>
 
                 </group>
             </sheet>
@@ -32,7 +32,7 @@
                             <strong><field name="name"/></strong>
                         </div>
                         <div>
-                    <field name="file"/>
+
                             <field name="description"/>
                         </div>
 

@@ -3,8 +3,9 @@ from odoo import models, fields
 
 from datetime import time
 
-class SubjectLines(models.Model):
+class StudentLines(models.Model):
     _name = 'academic.subjectlines'
+
 
 
 
@@ -13,7 +14,10 @@ class SubjectLines(models.Model):
         ('class two', 'Class Two'),
         ('class three', 'clas Three')
     ], string='Class')
-    name = fields.Char(string="Subject Name", required=True)
+    # subject = fields.Selection([
+    #     ('Telugu', 'Telugu'),
+    #     ('HIndi', 'Hindi')], string="Subject")
+    concept_id =fields.One2many("academic.subjectlines.line","concept", string="concept")
 
 
 
@@ -32,3 +36,9 @@ class SubjectLines(models.Model):
             'target': 'current',
 
         }
+
+class SubjectLines(models.Model):
+    _name = "academic.subjectlines.line"
+
+    subject = fields.Char("Subject")
+    concept =fields.Many2one("academic.subjectlines",string="concept")

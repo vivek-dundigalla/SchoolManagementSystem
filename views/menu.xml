@@ -33,6 +33,8 @@
     <menuitem id="menu_academic_department" name="Department" action="action_academic_department"
               parent="menu_school_Academic"/>
     <menuitem id="menu_subjects" name="Subjects" parent="menu_school_Academic" action="action_academic_subject"/>
+        <menuitem id="menu_syllabus" name="Syllabus" parent="menu_school_Academic" action="action_academic_syllabus"/>
+
 
 
     <menuitem id="menu_routine" name="Class Routine" parent="menu_school_Academic" action="action_academic_routine"/>
@@ -46,6 +48,8 @@
 
      <menuitem id="menu_school_Exam" name="Examination" parent="menu_school" sequence="50"/>
     <menuitem id="menu_academic_exam" name="Exam" action="action_examination_exam" parent="menu_school_Exam"/>
+<!--        <menuitem id="menu_academic_marks" name="Marks" action="action_exam_marks" parent="menu_school_Exam"/>-->
+
         <menuitem id="menu_academic_grades" name="Grades" action="action_exam_grades" parent="menu_school_Exam"/>
 
 
@@ -53,6 +57,9 @@
     <menuitem id="menu_accounting_expense" name="Expense Category" action="action_accounting_expense" parent="menu_school_Accounting"/>
     <menuitem id="menu_accounting_expense_manager" name="Expense Manager" action="action_accounting_expense_manager" parent="menu_school_Accounting"/>
         <menuitem id="menu_accounting_invoice" name="Student Fee Manager" action="action_accounting_fee" parent="menu_school_Accounting"/>
+
+    <menuitem id="menu_school_Online_Course" name="Online Course" parent="menu_school" sequence="70" action="action_online_courses"/>
+        <menuitem id="menu_school_Settings" name="School Settings" parent="menu_school" sequence="80" action="action_school_settings"/>
 
 
 </odoo>

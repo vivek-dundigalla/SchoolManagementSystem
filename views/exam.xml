@@ -10,9 +10,6 @@
                         <field name="exam_name"/>
                         <field name="starting_date"/>
                         <field name="ending_date"/>
-
-
-
                     </group>
                 </sheet>
 
@@ -26,11 +23,8 @@
         <field name="arch" type="xml">
             <list string="Exams">
                 <field name="exam_name"/>
-                        <field name="starting_date"/>
-                        <field name="ending_date"/>
-
-
-
+                <field name="starting_date"/>
+                <field name="ending_date"/>
             </list>
         </field>
 

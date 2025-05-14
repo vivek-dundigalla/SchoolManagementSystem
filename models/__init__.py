@@ -30,3 +30,9 @@ from .import issue
 from . import grades
 from . import studentfeemanager
 from . import feemanager
+from . import mass_invoice
+from . import syllabus
+from . import syllabusdetails
+from . import onlinecourses
+from . import coursedetails
+from . import schoolsettings

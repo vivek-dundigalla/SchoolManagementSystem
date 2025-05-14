@@ -22,6 +22,16 @@ class StudentFeeManager(models.Model):
 
         }
 
+    def add_mass_invoice(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Mass invoice',
+            'res_model': 'accounting.massinvoice',
+            'view_mode': 'form',
+            'target': 'new',
+
+        }
+
     def filter_invoice(self):
         domain = []
         if self.class_name:

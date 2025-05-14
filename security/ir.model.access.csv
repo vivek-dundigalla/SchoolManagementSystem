@@ -34,6 +34,21 @@ access_back_issue,access_back_issue,model_back_issue,,1,1,1,1
 access_exam_grades,access_exam_grades,model_exam_grades,,1,1,1,1
 access_accounting_fee,access_accounting_fee,model_accounting_fee,,1,1,1,1
 access_accounting_feemanager,access_accounting_feemanager,model_accounting_feemanager,,1,1,1,1
+access_accounting_massinvoice,access_accounting_massinvoice,model_accounting_massinvoice,,1,1,1,1
+access_academic_syllabus,access_academic_syllabus,model_academic_syllabus,,1,1,1,1
+access_academic_syllabusdetails,access_academic_syllabusdetails,model_academic_syllabusdetails,,1,1,1,1
+access_online_course,access_online_course,model_online_course,,1,1,1,1
+access_online_coursedetails,access_online_coursedetails,model_online_coursedetails,,1,1,1,1
+access_school_settings,access_school_settings,model_school_settings,,1,1,1,1
+
+
+
+
+
+
+
+
+
 
 
 

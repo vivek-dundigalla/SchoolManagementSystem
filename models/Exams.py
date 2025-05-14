@@ -8,6 +8,6 @@ class Exam(models.Model):
     _rec_name = "exam_name"
 
     exam_name= fields.Char(string="Name", tracking=True)
-    starting_date = fields.Char(string="Starting Date")
-    ending_date = fields.Char(string="Ending Date")
+    starting_date = fields.Date(string="Starting Date")
+    ending_date = fields.Date(string="Ending Date")
 

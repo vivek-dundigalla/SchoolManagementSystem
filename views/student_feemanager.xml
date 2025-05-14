@@ -9,6 +9,10 @@
                     <button name="add_single_invoice" string="Add Single Invoice" type="object" class="oe_highlight"/>
 
                 </header>
+                <header>
+                    <button name="add_mass_invoice" string="Add Mass Invoice" type="object" class="oe_highlight"/>
+
+                </header>
                 <sheet>
                     <group>
                         <field name="class_name"/>
