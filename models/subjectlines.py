@@ -1,44 +1,42 @@
 from odoo import models, fields
 
-
-from datetime import time
-
-class StudentLines(models.Model):
+class SubjectLines(models.Model):
     _name = 'academic.subjectlines'
 
-
-
-
     class_name = fields.Selection([
-        ('class one', 'Class One'),
-        ('class two', 'Class Two'),
-        ('class three', 'clas Three')
+        ("Class Ten", "Class Ten"),
+        ("Class Nine", "Class Nine"),
+        ("Class Eight", "Class Eight"),
+        ("Class Seven", "Class Seven"),
+        ("Class Six", "Class Six"),
+        ("Class Five", "Class Five"),
+        ("Class Four", "Class Four"),
+        ("Class Three", "Class Three"),
+        ("Class Two", "Class Two"),
+        ("Class One", "Class One")
     ], string='Class')
-    # subject = fields.Selection([
-    #     ('Telugu', 'Telugu'),
-    #     ('HIndi', 'Hindi')], string="Subject")
-    concept_id =fields.One2many("academic.subjectlines.line","concept", string="concept")
 
-
+    subject_ids = fields.Many2many('academic.subject', string='Subjects')
 
     def action_save_subject(self):
-
         return {'type': 'ir.actions.act_window_close'}
 
-
     def filter_subject(self):
+        domain = []
+        if self.class_name:  # Filter subjects based on the selected class_name
+            domain.append(('standard_name', '=', self.class_name))
 
         return {
             'type': 'ir.actions.act_window',
-            'name': 'filter',
-            'res_model': 'academic.subjectlines',
-            'view_mode': 'form',
+            'name': 'Filtered Subjects',
+            'res_model': 'academic.subjectlines.line',
+            'view_mode': 'list,form',
+            'domain': domain,  # Show filtered subjects for the selected class
             'target': 'current',
-
         }
 
-class SubjectLines(models.Model):
-    _name = "academic.subjectlines.line"
-
-    subject = fields.Char("Subject")
-    concept =fields.Many2one("academic.subjectlines",string="concept")
+    def default_get(self, fields):
+        res = super().default_get(fields)
+        if 'default_class_name' in self.env.context:
+            res['class_name'] = self.env.context['default_class_name']
+        return res

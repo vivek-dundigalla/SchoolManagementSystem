@@ -8,30 +8,13 @@
                 <sheet>
                     <group>
                         <field name="class_name"/>
-<!--                        <field name="subject"/>-->
-
+                        <field name="subject_ids" widget="many2many_tags" placeholder="Choose subjects"/>
                     </group>
-                     <notebook>
-                        <page string = "orderlines">
-                            <field name ="concept_id">
-                                <list editable="bottom">
-                                    <field name="subject"/>
-
-                                </list>
-                                <form>
-                                     <field name="subject"/>
-
-                                </form>
-                            </field>
-                        </page>
-
-
-                    </notebook>
                 </sheet>
-                 <footer>
-            <button name="action_save_subject" string="Save" type="object" class="btn-primary"/>
-            <button string="Cancel" class="btn-secondary" special="cancel"/>
-        </footer>
+                <footer>
+                    <button name="action_save_subject" string="Save" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
             </form>
         </field>
     </record>
@@ -41,23 +24,14 @@
         <field name="model">academic.subjectlines</field>
         <field name="arch" type="xml">
             <list string="subjectlines">
-                  <field name="class_name"/>
-
-
-
+                <field name="class_name"/>
             </list>
         </field>
-
     </record>
-
-
-
 
     <record id="action_academic_subjectlines" model="ir.actions.act_window">
         <field name="name">Subject lines</field>
         <field name="res_model">academic.subjectlines</field>
         <field name="view_mode">list,form</field>
-        <!--        <field name="view_id" ref="view_teacher_list"/>-->
     </record>
-
 </odoo>

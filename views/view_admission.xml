@@ -42,7 +42,7 @@
               <field name="student_section_ABC"/>
               <field name="student_gender"/>
               <field name="parent"/>
-                       </list>
+          </list>
       </field>
   </record>
 

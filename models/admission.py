@@ -9,16 +9,16 @@ class Admission(models.Model):
     student_password = fields.Char(string="Password", password=True)
     parent = fields.Many2one(comodel_name="res.partner", string="Parent", tracking=True)
     student_class_number = fields.Selection([
-        ("Class Ten", "Class Ten"),
-        ("Class Nine", "Class Nine"),
-        ("Class Eight", "Class Eight"),
-        ("Class Seven", "Class Seven"),
-        ("Class Six", "Class Six"),
-        ("Class Five", "Class Five"),
-        ("Class Four", "Class Four"),
-        ("Class Three", "Class Three"),
-        ("Class Two", "Class Two"),
-        ("Class One", "Class One")
+        ("class Ten", "Class Ten"),
+        ("class Nine", "Class Nine"),
+        ("class Eight", "Class Eight"),
+        ("class Seven", "Class Seven"),
+        ("class Six", "Class Six"),
+        ("class Five", "Class Five"),
+        ("class Four", "Class Four"),
+        ("class Three", "Class Three"),
+        ("class Two", "Class Two"),
+        ("class One", "Class One")
     ], string="Class",  tracking=True)
 
     student_section_ABC = fields.Selection([

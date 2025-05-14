@@ -44,6 +44,7 @@
             "views/online_courses.xml",
             "views/coursedetails.xml",
             "views/school_settings.xml",
+            "views/biometric_attendance.xml",
             # "views/marks.xml",
             # "views/mark_lines.xml",
             "views/menu.xml", ],
