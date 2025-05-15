@@ -9,21 +9,20 @@ class AssignStudents(models.Model):
     #     ('class three', 'clas Three')
     # ], string='Class')
 
-    category =fields.Selection([('driver','Driver'),('class','Class'),('vechicle','Vechicle')])
-    vh_model = fields.Many2one('transport.vehicle', string="Vehicle")
-    student_class_number = fields.Many2one('school.admission', string="Class")
+    category =fields.Selection([('driver','Driver'),('class','Class'),('vehicle','Vehicle')],string='category')
+    vh_model = fields.Many2one('transport.vechicle', string="Vehicle")
+    student_class_number = fields.Many2one('academic.class', string="Class")
     driver_name = fields.Many2one('school.drivers', string="Driver")
 
-    show_vehicle = fields.Boolean(compute="_compute_visibility")
-    show_class = fields.Boolean(compute="_compute_visibility")
-    show_driver = fields.Boolean(compute="_compute_visibility")
 
-    @api.depends('category')
-    def _compute_visibility(self):
-        for rec in self:
-            rec.show_vehicle = rec.category == 'vehicle'
-            rec.show_class = rec.category == 'class'
-            rec.show_driver = rec.category == 'driver'
+
+    #
+    # @api.onchange('category')
+    # def onchange(self):
+    #     for rec in self:
+    #         if rec.category=='driver':
+
+
 
     def assign_student(self):
         return {
@@ -37,16 +36,32 @@ class AssignStudents(models.Model):
 
 
 
-    # def filter_subject(self):
+    # def filter(self):
     #     domain = []
-    #     if self.standard_name:
-    #         domain.append(('standard_name', '=', self.standard_name))
+    #     if self.vh_model:
+    #         domain.append(('vh_model', '=', self.vh_model.id))
+    #     if self.student_class_number:
+    #         domain.append(('student_class_number', '=', self.student_class_number.id))
+    #     if self.driver_name:
+    #         domain.append(('driver_name', '=', self.driver_name.id))
     #
     #     return {
     #         'type': 'ir.actions.act_window',
-    #         'name': 'Filtered Subjects',
-    #         'res_model': 'academic.subjectlines',
+    #         'name': 'Filtered list',
+    #         'res_model': 'transport.assignstudents',
     #         'view_mode': 'list',
     #         'domain': domain,
     #         'target': 'current',
     #     }
+
+    def filter(self):
+        for rec in self:
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Filtered Marks',
+                'res_model': 'transport.assignstudents',
+                'view_mode': 'list,form',
+                'domain': [('vh_model', '=', rec.vh_model.id),('student_class_number', '=', rec.student_class_number.id),('driver_name', '=', rec.driver_name.id)],
+                'target': 'new',
+            }
+

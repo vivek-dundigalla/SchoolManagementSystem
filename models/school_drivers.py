@@ -3,6 +3,7 @@ from odoo import models, fields, api
 
 class schooltransportdrivers(models.Model):
     _name = "school.drivers"
+    _rec_name = "driver_name"
 
     driver_image = fields.Binary(string="Image")
     driver_s_no = fields.Integer(string="S.no")

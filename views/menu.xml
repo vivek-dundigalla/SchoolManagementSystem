@@ -67,6 +67,8 @@
         <menuitem id="menu_academic_marks" name="Marks" action="action_exam_marks" parent="menu_school_Exam"/>
 
     <menuitem id="menu_academic_grades" name="Grades" action="action_exam_grades" parent="menu_school_Exam"/>
+        <menuitem id="menu_academic_promotion" name="Promotion" action="action_exam_promotion" parent="menu_school_Exam"/>
+
 
     <!-- Accounting Menu -->
     <menuitem id="menu_school_Accounting" name="Accounting" parent="menu_school" sequence="60"/>

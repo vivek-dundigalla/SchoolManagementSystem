@@ -11,28 +11,32 @@
                 <sheet>
                     <group>
                         <field name="category"/>
-
-                        </group>
-
+                        <field name="vh_model" invisible="category != 'vehicle'"/>
+                        <field name="student_class_number" invisible="category != 'class'"/>
+                        <field name="driver_name" invisible="category != 'driver'"/>
+                    </group>
+                         <xpath expr="//field[@name='driver_name']" position="after">
+                             <button name="filter" string="Filter" type="object" class="oe_highlight"/></xpath>
                 </sheet>
             </form>
         </field>
     </record>
-    <record id="view_assign_list" model="ir.ui.view">
-        <field name="name">students</field>
-        <field name="model">transport.assign</field>
-        <field name="arch" type="xml">
-            <list string="students">
-                <field name="category"/>
-            </list>
-        </field>
-    </record>
+
+<!--    <record id="view_assign_list" model="ir.ui.view">-->
+<!--        <field name="name">students</field>-->
+<!--        <field name="model">transport.assign</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <list string="students">-->
+<!--                <field name="category"/>-->
+<!--            </list>-->
+<!--        </field>-->
+<!--    </record>-->
 
 
     <record id="action_transport_assign" model="ir.actions.act_window">
         <field name="name">students</field>
         <field name="res_model">transport.assign</field>
-        <field name="view_mode">list,form</field>
-        <field name="view_id" ref="view_assign_list"/>
+        <field name="view_mode">form</field>
+<!--        <field name="view_id" ref="view_assign_list"/>-->
     </record>
 </odoo>

@@ -52,5 +52,7 @@
             "views/biometric_attendance.xml",
             # "views/marks.xml",
             # "views/mark_lines.xml",
+            "views/views_promotion.xml",
+            "views/manage_promotion.xml",
             "views/menu.xml", ],
 }

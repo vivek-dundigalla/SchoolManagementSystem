@@ -14,6 +14,8 @@ class AssigningStudentsToDrivers(models.Model):
         [("A", "A"), ("B", "B"), ("C", "C")], string="Section")
     student_class_number = fields.Many2one("school.admission",string="Class")
     student_name = fields.Many2one("school.student",string='Student')
+    driver_name = fields.Many2one('school.drivers', string="Driver")
+
 
 
 

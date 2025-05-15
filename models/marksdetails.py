@@ -63,3 +63,5 @@ class SyllabusDetails(models.Model):
 
             rec.grade = grade_obj.grade if grade_obj else ''
             rec.grade_point = grade_obj.grade_point if grade_obj else 0.0
+
+

@@ -41,3 +41,5 @@ from . import biometric_attendance
 from . import marks
 from . import marksdetails
 from . import assigning_students_to_drivers
+from . import promotion
+from . import managepromotion
