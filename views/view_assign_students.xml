@@ -6,13 +6,14 @@
         <field name="arch" type="xml">
             <form string="students">
                 <header>
-                    <button name="action_assign" string="+ Assign Students" type="object" class="oe_highlight"/>
+                    <button name="assign_student" string="+ Assign Students" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <group>
-                        <field name="vechicle"/>
-                        <field name="assigned_date"/>
-                    </group>
+                        <field name="category"/>
+
+                        </group>
+
                 </sheet>
             </form>
         </field>
@@ -22,8 +23,7 @@
         <field name="model">transport.assign</field>
         <field name="arch" type="xml">
             <list string="students">
-                <field name="vechicle"/>
-                <field name="assigned_date"/>
+                <field name="category"/>
             </list>
         </field>
     </record>

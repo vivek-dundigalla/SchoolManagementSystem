@@ -3,7 +3,7 @@
     "author": "Vivek",
     "version": "18.0",
     "license": "LGPL-3",
-    "depends": ["base", ],
+    "depends": ["base",],
 
     "data":
         [
@@ -11,6 +11,7 @@
             "views/view_driver.xml",
             "views/view_vechicle.xml",
             "views/view_assign_students.xml",
+            "views/allocating_students.xml",
             "views/view_teachers.xml",
             "views/view_parent.xml",
             "views/view_accountant.xml",
@@ -44,6 +45,10 @@
             "views/online_courses.xml",
             "views/coursedetails.xml",
             "views/school_settings.xml",
+            "views/marks.xml",
+            "views/mark_details.xml",
+            "report/report.xml",
+            "report/report_fee_invoice_template.xml",
             "views/biometric_attendance.xml",
             # "views/marks.xml",
             # "views/mark_lines.xml",

@@ -3,6 +3,7 @@ from odoo import models, fields, api
 
 class Admission(models.Model):
     _name = "school.admission"
+    _rec_name = "student_class_number"
 
     student_name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
     student_email = fields.Char(string="Email", tracking=True)

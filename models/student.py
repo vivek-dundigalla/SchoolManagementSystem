@@ -4,6 +4,7 @@ from odoo import models, fields
 class Student(models.Model):
    _name = 'school.student'
    _description = 'Student'
+   _rec_name = "name"
 
 
    name = fields.Char(string="Name")
