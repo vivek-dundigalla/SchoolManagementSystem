@@ -46,7 +46,7 @@ class Marks(models.Model):
                 'res_model': 'exam.marksdetails',
                 'view_mode': 'list,form',
                 'domain': [('student_class_number1','=',rec.student_class_number1.id)],
-                'target': 'new',
+                'target': 'current',
             }
 
 
