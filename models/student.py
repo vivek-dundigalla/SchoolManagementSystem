@@ -11,7 +11,7 @@ class Student(models.Model):
    email = fields.Char(string="Email")
    password = fields.Char(string="Password")
    parent_id = fields.Many2one('res.partner', string="Parent")
-   class_number = fields.Selection([
+   student_class_number = fields.Selection([
        ("Class Ten", "Class Ten"),
        ("Class Nine", "Class Nine"),
        ("Class Eight", "Class Eight"),

@@ -9,14 +9,14 @@ class SyllabusDetails(models.Model):
 
 
 
-    student_name = fields.Many2one("school.admission", string='Student Name')
+    name = fields.Many2one("school.student", string='Student Name')
 
     marks_id = fields.Many2one("exam.marks", string="Marks Reference")  # Add this line
 
     marks = fields.Integer(string="Marks")
     grade_point = fields.Char(string='Grade Point')
     comment = fields.Char(string="Comment")
-    student_class_number = fields.Selection(related='student_name.student_class_number', store=True)
+    student_class_number = fields.Selection(related='name.student_class_number', store=True)
     # student_section_ABC = fields.Selection(related='student_name.student_section_ABC', store=True)
     sections = fields.Selection([
         ("A", "A"),
@@ -29,7 +29,7 @@ class SyllabusDetails(models.Model):
     #     return {'type': 'ir.actions.act_window_close'}
     def action_save_marks(self):
         vals = {
-            'student_name': self.student_name.id,
+            'name': self.name.id,
             'marks': self.marks,
             'grade_point': self.grade_point,
             'comment': self.comment,

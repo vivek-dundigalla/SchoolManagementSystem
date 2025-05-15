@@ -14,7 +14,7 @@
                         <field name="student_class_number"/>
                         <field name="sections"></field>
 <!--                        <field name="section"></field>-->
-                        <field name="subject"></field>
+<!--                        <field name="subject"></field>-->
 
                     </group>
                     <xpath expr="//field[@name='subject']" position="after">
@@ -34,7 +34,7 @@
                 <field name="student_class_number"/>
                         <field name="sections"></field>
 <!--                        <field name="section"></field>-->
-                        <field name="subject"></field>
+<!--                        <field name="subject"></field>-->
 
             </list>
         </field>

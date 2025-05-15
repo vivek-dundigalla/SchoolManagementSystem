@@ -10,7 +10,7 @@
                <field name="name"/>
                <field name="email"/>
                <field name="mobile_number"/>
-               <field name="class_number"/>
+               <field name="student_class_number"/>
                <field name="section"/>
                <field name="gender"/>
            </list>
@@ -31,7 +31,7 @@
                        <field name="password"/>
                        <field name="parent_id"/>
                        <field name="mobile_number"/>
-                       <field name="class_number"/>
+                       <field name="student_class_number"/>
                        <field name="section"/>
                        <field name="dob"/>
                        <field name="gender"/>
