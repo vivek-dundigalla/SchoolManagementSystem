@@ -40,6 +40,12 @@ access_academic_syllabusdetails,access_academic_syllabusdetails,model_academic_s
 access_online_course,access_online_course,model_online_course,,1,1,1,1
 access_online_coursedetails,access_online_coursedetails,model_online_coursedetails,,1,1,1,1
 access_school_settings,access_school_settings,model_school_settings,,1,1,1,1
+access_exam_marks,access_exam_marks,model_exam_marks,,1,1,1,1
+access_exam_marksdetails,access_exam_marksdetails,model_exam_marksdetails,,1,1,1,1
+access_transport_assignstudents,access_transport_assignstudents,model_transport_assignstudents,,1,1,1,1
+
+
+
 
 
 

@@ -48,7 +48,7 @@
 
      <menuitem id="menu_school_Exam" name="Examination" parent="menu_school" sequence="50"/>
     <menuitem id="menu_academic_exam" name="Exam" action="action_examination_exam" parent="menu_school_Exam"/>
-<!--        <menuitem id="menu_academic_marks" name="Marks" action="action_exam_marks" parent="menu_school_Exam"/>-->
+        <menuitem id="menu_academic_marks" name="Marks" action="action_exam_marks" parent="menu_school_Exam"/>
 
         <menuitem id="menu_academic_grades" name="Grades" action="action_exam_grades" parent="menu_school_Exam"/>
 

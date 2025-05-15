@@ -6,21 +6,21 @@
         <field name="arch" type="xml">
             <form string="Marks">
                 <header>
-<!--                    <button name="allot_marks" string="Allot Marks" type="object" class="oe_highlight"/>-->
+                    <button name="allot_marks" string="Allot Marks" type="object" class="oe_highlight"/>
 
                 </header>
                 <sheet>
                     <group>
-                        <field name="class_name"/>
-                        <field name="exam_name"></field>
+                        <field name="student_class_number"/>
+                        <field name="sections"></field>
 <!--                        <field name="section"></field>-->
                         <field name="subject"></field>
 
                     </group>
-<!--                    <xpath expr="//field[@name='subject']" position="after">-->
-<!--                        <button name="filter_marks" string="Filter" type="object" class="oe_highlight"/>-->
+                    <xpath expr="//field[@name='subject']" position="after">
+                        <button name="filter_marks" string="Filter" type="object" class="oe_highlight"/>
 
-<!--                    </xpath>-->
+                    </xpath>
                 </sheet>
 
             </form>
@@ -31,8 +31,8 @@
         <field name="model">exam.marks</field>
         <field name="arch" type="xml">
             <list string="Marks">
-                <field name="class_name"/>
-                        <field name="exam_name"></field>
+                <field name="student_class_number"/>
+                        <field name="sections"></field>
 <!--                        <field name="section"></field>-->
                         <field name="subject"></field>
 

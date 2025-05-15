@@ -8,7 +8,7 @@ class FeeManager(models.Model):
 
 
 
-
+    fee_lines=fields.Char("Lines")
     class_name = fields.Selection([
         ('class one', 'Class One'),
         ('class two', 'Class Two'),
@@ -39,3 +39,7 @@ class FeeManager(models.Model):
             'target': 'current',
 
         }
+
+    # def print_report(self):
+    #     return self.env.ref('SchoolManagementSystem.report_student_invoice_pdf').report_action(self)
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_fee_invoice_report_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="student">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h5>SCHOOL MANAGEMENT SYSTEM</h5>
+                        <div>
+                            <div>
+
+                            <br/>
+                        <table>
+                            <thead>
+                                <tr style="color:skyblue; font-size:10px;">
+                                    <th style="padding:10px"><b>CLASS</b></th>
+                                    <th style="padding:10px"><b>STUDENT</b></th>
+                                    <th style="padding:10px"><b>DATE</b></th>
+                                    <th style="padding:10px"><b>INVOICE TITLE</b></th>
+                                    <th style="padding:10px"><b>TOTAL</b></th>
+                                    <th style="padding:10px"><b>PAID AMOUNT</b></th>
+                                     <th style="padding:10px"><b>STATUS</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+<!--                                <t t-foreach="student.fee_lines" t-as="lines">-->
+                                    <tr style="font-size:10px;">
+                                        <td style="padding:10px">
+                                            <span t-field="student.class_name"/>
+                                        </td>
+                                        <td style="padding:10px">
+                                            <span t-field="student.date"/>
+                                        </td>
+                                        <td style="padding:10px">
+                                            <span t-field="student.student"/>
+                                        </td>
+                                        <td style="padding:10px">
+                                            <span t-field="student.invoice_title"/>
+                                             <td style="padding:30px">
+                                            <span t-field="student.total_amount"/>
+                                        </td>
+                                             <td style="padding:10px">
+                                            <span t-field="student.paid_amount"/>
+                                        </td>
+                                             <td style="padding:10px">
+                                            <span t-field="student.status"/>
+                                        </td>
+                                        </td>
+                                    </tr>
+
+                            </tbody>
+                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

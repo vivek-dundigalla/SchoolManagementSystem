@@ -36,3 +36,6 @@ from . import syllabusdetails
 from . import onlinecourses
 from . import coursedetails
 from . import schoolsettings
+from . import marks
+from . import marksdetails
+from . import assigning_students_to_drivers
