@@ -11,7 +11,8 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="student_class_number"/>
+<!--                        <field name="student_class_number"/>-->
+                        <field name="student_class_number1"/>
                         <field name="sections"></field>
 <!--                        <field name="section"></field>-->
 <!--                        <field name="subject"></field>-->

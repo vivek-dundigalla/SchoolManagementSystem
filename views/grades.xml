@@ -10,8 +10,8 @@
                     <group>
                         <field name="grade"/>
                         <field name="grade_point"/>
-                        <field name="mark_from"/>
-                        <field name="mark_upto"/>
+                        <field name="from_marks"/>
+                        <field name="upto_marks"/>
                     </group>
                 </sheet>
             </form>
@@ -26,8 +26,8 @@
 
                           <field name="grade"/>
                         <field name="grade_point"/>
-                        <field name="mark_from"/>
-                        <field name="mark_upto"/>
+                        <field name="from_marks"/>
+                        <field name="upto_marks"/>
             </list>
         </field>
     </record>

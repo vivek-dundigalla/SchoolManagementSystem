@@ -8,14 +8,11 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                         <field name="student_class_number"/>
+                         <field name="student_class_number1"/>
                         <field name="marks"/>
                         <field name="grade_point"/>
                         <field name="comment"/>
                         <field name ="sections"/>
-
-
-
 
                     </group>
                 </sheet>
@@ -33,7 +30,7 @@
         <field name="arch" type="xml">
             <list string="Marks Details">
                 <field name="name"/>
-                <field name="student_class_number"/>
+                <field name="student_class_number1"/>
                 <field name="sections"/>
 
                 <field name="marks"/>

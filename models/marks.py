@@ -17,7 +17,8 @@ class Marks(models.Model):
     #
     # ], string='Class')
 
-    student_class_number = fields.Many2one("school.admission", store=True,string="Standard")
+
+    student_class_number1 = fields.Many2one("academic.class", store=True,string="Standard")
 
     sections = fields.Selection(
         [("A","A"),("B", "B"),("C","C")] ,string ="Section")
@@ -37,63 +38,15 @@ class Marks(models.Model):
 
         }
 
-    # def filter_marks(self):
-    #     domain = []
-    #     if self.standard_name:
-    #         domain.append(('standard_name', '=', self.standard_name))
-    #     if self.sections:
-    #         domain.append(('sections', '=', self.sections))
-    #     if self.subject:
-    #         domain.append(('subject', '=', self.subject))
-    #
-    #     return {
-    #         'type': 'ir.actions.act_window',
-    #         'name': 'Filtered Marks',
-    #         'res_model': 'exam.marksdetails',
-    #         'view_mode': 'list',
-    #         'domain': domain,
-    #         'target': 'current',
-    #     }
-
-    # marks.py
-
-    # def filter_marks(self):
-    #     domain = []
-    #     if self.standard_name:
-    #         domain.append(('marks_id.standard_name', '=', self.standard_name))
-    #     if self.sections:
-    #         domain.append(('marks_id.sections', '=', self.sections))
-    #     if self.subject:
-    #         domain.append(('marks_id.subject', '=', self.subject))
-    #
-    #     return {
-    #         'type': 'ir.actions.act_window',
-    #         'name': 'Filtered Marks',
-    #         'res_model': 'exam.marksdetails',
-    #         'view_mode': 'list,form',
-    #         'domain': domain,
-    #         'target': 'current',
-    #         'context': {
-    #             'default_marks_id': self.id
-    #         }
-    #     }
-
     def filter_marks(self):
-        domain = []
-        if self.student_class_number:
-            domain.append(('student_class_number', '=', self.student_class_number))
-        if self.sections:
-            domain.append(('sections', '=', self.sections))
-        if self.subject:
-            domain.append(('marks_id.subject', '=', self.subject))
-
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Filtered Marks',
-            'res_model': 'exam.marksdetails',
-            'view_mode': 'list,form',
-            'domain': domain,
-            'target': 'current',
-        }
+        for rec in self:
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Filtered Marks',
+                'res_model': 'exam.marksdetails',
+                'view_mode': 'list,form',
+                'domain': [('student_class_number1','=',rec.student_class_number1.id)],
+                'target': 'new',
+            }
 
 

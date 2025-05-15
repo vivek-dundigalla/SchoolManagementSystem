@@ -8,5 +8,6 @@ class Grades(models.Model):
 
     grade = fields.Char(string="Grade")
     grade_point = fields.Float(string="Grade Point", tracking=True)
-    mark_from = fields.Date(string="Mark From")
-    mark_upto= fields.Date(string="Mark Upto")
+    from_marks= fields.Integer(string="Mark From")
+    upto_marks= fields.Integer(string="Mark Upto")
+    # marks_id=fields.Many2one("exam.marksdetails","marks")
