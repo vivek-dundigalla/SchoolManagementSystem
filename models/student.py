@@ -42,4 +42,3 @@ class Student(models.Model):
    address = fields.Char(string="Address")
    mobile_number = fields.Char(string="Mobile Number")
    image = fields.Binary(string="Profile Image")
-

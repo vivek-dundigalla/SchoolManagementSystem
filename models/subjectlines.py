@@ -14,7 +14,7 @@ class SubjectLines(models.Model):
         ("Class Three", "Class Three"),
         ("Class Two", "Class Two"),
         ("Class One", "Class One")
-    ], string='Class')
+    ], string='Class',default='Class Ten')
 
     subject_ids = fields.Many2many('academic.subject', string='Subjects')
 
@@ -29,14 +29,14 @@ class SubjectLines(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Filtered Subjects',
-            'res_model': 'academic.subjectlines.line',
-            'view_mode': 'list,form',
+            'res_model': 'academic.subject',
+            'view_mode': 'list',
             'domain': domain,  # Show filtered subjects for the selected class
             'target': 'current',
         }
 
-    def default_get(self, fields):
-        res = super().default_get(fields)
-        if 'default_class_name' in self.env.context:
-            res['class_name'] = self.env.context['default_class_name']
-        return res
+    # def default_get(self, fields):
+    #     res = super().default_get(fields)
+    #     if 'default_class_name' in self.env.context:
+    #         res['class_name'] = self.env.context['default_class_name']
+    #     return res

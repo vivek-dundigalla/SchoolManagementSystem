@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Admission(models.Model):
     _name = "school.admission"
-    _rec_name = "student_class_number"
+    _rec_name = "student_name"
 
     student_name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
     student_email = fields.Char(string="Email", tracking=True)
@@ -63,14 +63,14 @@ class Admission(models.Model):
 
     @api.model
     def create(self, vals):
-        admission = super().create(vals)
+        admission = super(Admission,self).create(vals)
 
         self.env['school.student'].create({
             'name': admission.student_name.name,
             'email': admission.student_email,
             'password': admission.student_password,
             'parent_id': admission.parent.id if admission.parent else False,
-            'class_number': admission.student_class_number,
+            'student_class_number1': admission.student_class_number,
             'section': admission.student_section_ABC,
             'dob': admission.student_dob,
             'gender': admission.student_gender,

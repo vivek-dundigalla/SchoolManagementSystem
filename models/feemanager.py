@@ -7,7 +7,6 @@ class FeeManager(models.Model):
     _name = 'accounting.feemanager'
 
 
-
     fee_lines=fields.Char("Lines")
     class_name = fields.Selection([
         ('class one', 'Class One'),
@@ -15,7 +14,7 @@ class FeeManager(models.Model):
         ('class three', 'clas Three')
     ], string='Class')
     date =fields.Date(string="date")
-    student = fields.Char(string="Student")
+    student= fields.Many2one("school.student",string="Student")
 
     invoice_title = fields.Char( string='Invoice Title')
     total_amount = fields.Integer(string="Total_amount")

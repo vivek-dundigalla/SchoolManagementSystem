@@ -2,8 +2,9 @@ from odoo import models, fields
 
 class Subject(models.Model):
     _name = 'academic.subject'
+    _rec_name = "name"
 
-    name = fields.Char(string="Subject Name", required=True)  # Add the name field
+    name = fields.Char(string="Subject Name")  # Add the name field
 
     standard_name = fields.Selection([
         ("Class Ten", "Class Ten"),
@@ -56,9 +57,9 @@ class Subject(models.Model):
             'res_model': 'academic.subjectlines',
             'view_mode': 'form',
             'target': 'new',
-            'context': {
-                'default_class_name': self.standard_name,
-            }
+            # 'context': {
+            #     'default_class_name': self.standard_name,
+            # }
         }
 
     def filter_subject(self):
