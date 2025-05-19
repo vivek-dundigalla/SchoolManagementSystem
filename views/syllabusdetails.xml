@@ -7,10 +7,10 @@
             <form string="Syllabus Details">
                 <sheet>
                     <group>
-                        <field name="class_name"/>
+                        <field name="class_namess"/>
                         <field name="section"/>
                         <field name="title"/>
-                        <field name="subject"/>
+                        <field name="subjects"/>
                         <field name="upload_syllabus" filename="filename" widget="binary"/>
 
 
@@ -31,10 +31,10 @@
         <field name="model">academic.syllabusdetails</field>
         <field name="arch" type="xml">
             <list string="Syllabus Details">
-                  <field name="class_name"/>
+                  <field name="class_namess"/>
                         <field name="section"/>
                          <field name="title"/>
-                        <field name="subject"/>
+                        <field name="subjects"/>
                         <field name="upload_syllabus" filename="filename" widget="binary"/>
 
 

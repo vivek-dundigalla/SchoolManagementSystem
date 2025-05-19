@@ -7,10 +7,12 @@
             <form string="StudentstoDrivers">
                 <sheet>
                     <group>
-                        <field name="vh_model"/>
+                        <field name="vehicle_model"/>
                         <field name="section"/>
                         <field name="student_class_number"/>
                         <field name="student_name"/>
+                                                <field name="driver_names_id"/>
+
 
 
 
@@ -29,10 +31,11 @@
         <field name="model">transport.assignstudents</field>
         <field name="arch" type="xml">
             <list string="StudentstoDrivers">
-                 <field name="vh_model"/>
+                 <field name="vehicle_model"/>
                         <field name="section"/>
                         <field name="student_class_number"/>
                         <field name="student_name"/>
+                                                <field name="driver_names_id"/>
 
             </list>
         </field>

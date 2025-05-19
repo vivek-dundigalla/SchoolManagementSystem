@@ -14,18 +14,16 @@ class BulkStudentAdmission(models.Model):
    def action_confirm_bulk_admission(self):
        student_model = self.env['school.student']
        # student_vals_list = []
-
-
        for admission in self:
            for line in admission.admission_line_ids:
                student_model.create({
-                   'name': line.name,
-                   'class_number': line.class_number,
+                   'name': line.name.name,
+                   'student_class_number1': line.student_class_number1.id,
                    'section': line.section,
                    'email': line.email,
                    'password': line.password,
                    'gender': line.gender,
-                   'parent_id': line.parent_id,
+                   'parent_id': line.parent_id.id,
                    # 'parent_id': line.parent_id.id if line.parent_id else False,
                    # Add other fields as needed
                })
@@ -41,6 +39,8 @@ class BulkStudentAdmissionLine(models.Model):
     _description = 'Bulk Student Admission Line'
 
     admission_id = fields.Many2one('bulk.student.admission', string='Admission Reference')
+    student_class_number1 = fields.Many2one("academic.class", store=True, string="Standard")
+
     class_number = fields.Selection([
         ("Class Ten", "Class Ten"),
         ("Class Nine", "Class Nine"),
@@ -64,5 +64,5 @@ class BulkStudentAdmissionLine(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string="Gender")
-    parent_id = fields.Many2one(string="Parent")
-    # parent_id = fields.Many2one(comodel_name="res.partner",string="Parent")
+    # parent_id = fields.Many2one(string="Parent")
+    parent_id = fields.Many2one(comodel_name="res.partner",string="Parent")

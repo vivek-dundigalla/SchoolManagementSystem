@@ -3,20 +3,6 @@ from odoo import models, fields
 class Marks(models.Model):
     _name = 'exam.marks'
 
-    # standard_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'Class Three'),
-    #     ('class four', 'Class Four'),
-    #     ('class five', 'Class Five'),
-    #     ('class six', 'Class Six'),
-    #     ('class seven', 'Class Seven'),
-    #     ('class Eight', 'Class Eight'),
-    #     ('class nine', 'Class Nine'),
-    #     ('class Ten ', 'Class Ten'),
-    #
-    # ], string='Class')
-
 
     student_class_number1 = fields.Many2one("academic.class", store=True,string="Standard")
 

@@ -7,7 +7,7 @@
             <form string="Timetable">
                 <sheet>
                     <group>
-                        <field name="class_name"/>
+                        <field name="class_names"/>
                         <field name="section"/>
                         <field name="name"/>
                         <field name="teacher_name"/>
@@ -33,7 +33,7 @@
         <field name="arch" type="xml">
             <list string="Timetable">
                  <field name="day"/>
-                <field name="class_name"/>
+                <field name="class_names"/>
                 <field name="section"/>
                 <field name="name"/>
                 <field name="teacher_name"/>

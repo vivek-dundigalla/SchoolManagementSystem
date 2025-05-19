@@ -5,13 +5,14 @@ from datetime import time
 
 class SyllabusDetails(models.Model):
     _name = 'exam.marksdetails'
+    _rec_name = "name"
 
 
 
 
     name = fields.Many2one("school.student", string='Student Name' ,domain=[('student_class_number1','!=',False)])
 
-    marks_id = fields.Many2one("exam.marks", string="Marks Reference")  # Add this line
+    marks_id = fields.Many2one("exam.marks", string="Marks Reference")
 
     marks = fields.Integer(string="Marks")
     # grade_point = fields.Char(related="marks_id.grade_point",string='Grade Point')

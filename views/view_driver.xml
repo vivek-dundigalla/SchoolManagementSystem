@@ -5,14 +5,19 @@
         <field name="model">school.drivers</field>
         <field name="arch" type="xml">
             <form string="Drivers">
-                <field name="driver_image" widget="image" class="oe_avatar"/>
                 <sheet>
                     <group>
-                        <field name="driver_s_no"/>
-                        <field name="driver_name"/>
-                        <field name="driver_email"/>
-                        <field name="driver_number"/>
-                        <field name="driver_vehicle_number"/>
+                        <group>
+                            <field name="driver_s_no"/>
+                            <field name="driver_name" />
+                            <field name="driver_email"/>
+                            <field name="driver_number"/>
+                            <field name="driver_vehicle_number"/>
+                        </group>
+
+                        <group>
+                            <field name="driver_image" widget="image" class="oe_avatar"/>
+                        </group>
                     </group>
                 </sheet>
             </form>

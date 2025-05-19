@@ -16,7 +16,7 @@
                        <field name="name" invisible="1"/>
                        <field name="admission_line_ids">
                            <list editable="bottom">
-                               <field name="class_number"/>
+                               <field name="student_class_number1"/>
                                <field name="section"/>
                                <field name="name"/>
                                <field name="email"/>

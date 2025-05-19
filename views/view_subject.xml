@@ -10,9 +10,9 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="standard_name"/>
+                        <field name="standard_names"/>
                     </group>
-                    <xpath expr="//field[@name='standard_name']" position="after">
+                    <xpath expr="//field[@name='standard_names']" position="after">
                         <button name="filter_subject" string="Filter" type="object" class="oe_highlight"/>
                     </xpath>
                 </sheet>
@@ -26,7 +26,7 @@
         <field name="arch" type="xml">
             <list string="Subjects">
                 <field name="name"/>
-                <field name="standard_name"/>
+                <field name="standard_names"/>
             </list>
         </field>
     </record>

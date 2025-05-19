@@ -3,20 +3,21 @@ from odoo import models, fields
 class Subject(models.Model):
     _name = 'academic.subject'
 
-    name = fields.Char(string="Subject Name", required=True)  # Add the name field
+    name = fields.Char(string="Subject Name")  # Add the name field
 
-    standard_name = fields.Selection([
-        ("Class Ten", "Class Ten"),
-        ("Class Nine", "Class Nine"),
-        ("Class Eight", "Class Eight"),
-        ("Class Seven", "Class Seven"),
-        ("Class Six", "Class Six"),
-        ("Class Five", "Class Five"),
-        ("Class Four", "Class Four"),
-        ("Class Three", "Class Three"),
-        ("Class Two", "Class Two"),
-        ("Class One", "Class One")
-    ], string='Class')
+    # standard_name = fields.Selection([
+    #     ("Class Ten", "Class Ten"),
+    #     ("Class Nine", "Class Nine"),
+    #     ("Class Eight", "Class Eight"),
+    #     ("Class Seven", "Class Seven"),
+    #     ("Class Six", "Class Six"),
+    #     ("Class Five", "Class Five"),
+    #     ("Class Four", "Class Four"),
+    #     ("Class Three", "Class Three"),
+    #     ("Class Two", "Class Two"),
+    #     ("Class One", "Class One")
+    # ], string='Class')
+    standard_names=fields.Many2one("academic.class","Class")
 
     def add_subjects_for_all_classes(self):
         subjects = [
@@ -45,7 +46,7 @@ class Subject(models.Model):
         for class_name in classes:
             for subject in subjects:
                 self.env['academic.subject'].create({
-                    'standard_name': class_name,
+                    'standard_names': class_name,
                     'name': subject  # Assigning name for each subject
                 })
 
@@ -57,7 +58,7 @@ class Subject(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_class_name': self.standard_name,
+                'default_class_name': self.standard_names,
             }
         }
 
@@ -66,7 +67,7 @@ class Subject(models.Model):
         class_name = self.env.context.get('default_class_name')
         domain = []
         if class_name:
-            domain.append(('standard_name', '=', class_name))  # Filter by class_name in 'academic.subject'
+            domain.append(('standard_names', '=', class_name))  # Filter by class_name in 'academic.subject'
 
         return {
             'type': 'ir.actions.act_window',

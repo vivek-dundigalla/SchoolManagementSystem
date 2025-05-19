@@ -15,6 +15,7 @@
                       <field name="student_email"/>
                       <field name="student_password" widget="password" password="True"/>
                       <field name="parent"/>
+                      <field name="student_class_number1"/>
                       <field name="student_class_number"/>
                       <field name="student_section_ABC"/>
                       <field name="student_dob"/>
@@ -38,6 +39,7 @@
               <field name="student_name"/>
               <field name="student_email"/>
               <field name="student_password"/>
+              <field name="student_class_number1"/>
               <field name="student_class_number"/>
               <field name="student_section_ABC"/>
               <field name="student_gender"/>

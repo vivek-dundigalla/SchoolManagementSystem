@@ -11,7 +11,7 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="class_name"/>
+                        <field name="class_number"/>
                         <field name="section"></field>
                     </group>
                     <xpath expr="//field[@name='section']" position="after">
@@ -28,7 +28,7 @@
         <field name="model">academic.syllabus</field>
         <field name="arch" type="xml">
             <list string="Syllabus">
-                <field name="class_name"/>
+                <field name="class_number"/>
                 <field name="section"/>
 
             </list>

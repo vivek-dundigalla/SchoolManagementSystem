@@ -11,9 +11,11 @@
                 <sheet>
                     <group>
                         <field name="category"/>
-
-                        </group>
-
+                        <field name="vehicle_model" invisible="category != 'vehicle'"/>
+                        <field name="student_class_number" invisible="category != 'class'"/>
+                        <field name="driver_names_id" invisible="category != 'driver'"/>
+                        <button name="filter" string="filter" type="object" class="oe_highlight"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -32,7 +34,7 @@
     <record id="action_transport_assign" model="ir.actions.act_window">
         <field name="name">students</field>
         <field name="res_model">transport.assign</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">form</field>
         <field name="view_id" ref="view_assign_list"/>
     </record>
 </odoo>

@@ -1,46 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_vechicle_form" model="ir.ui.view">
-        <field name="name">transport.vechicle.form</field>
-        <field name="model">transport.vechicle</field>
+    <record id="view_vehicle_form" model="ir.ui.view">
+        <field name="name">transport.vehicle.form</field>
+        <field name="model">transport.vehicle</field>
         <field name="arch" type="xml">
-            <form string="Vechicles">
+            <form string="vehicle">
                 <header>
-                    <button name="action_create_vehicle" string="+ Create Vechicle" type="object" class="oe_highlight"/>
+                    <button name="action_create_vehicle" string="+ Create vehicle" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <group>
-                        <field name="number"/>
-                        <field name="vh_number"/>
-                        <field name="vh_model"/>
-                        <field name="capacity"/>
-                        <field name="route"/>
+                        <group>
+                            <field name="vehicle_s_no"/>
+                            <field name="vh_number"/>
+                            <field name="vehicle_model"/>
+                            <field name="capacity"/>
+                            <field name="route_id"/>
+                        </group>
 
+                        <group>
+                            <field name="vehicle_image" widget="image" class="oe_avatar"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    <record id="view_vechicle_list" model="ir.ui.view">
-        <field name="name">vechicle</field>
-        <field name="model">transport.vechicle</field>
+    <record id="view_vehicle_list" model="ir.ui.view">
+        <field name="name">vehicle</field>
+        <field name="model">transport.vehicle</field>
         <field name="arch" type="xml">
-            <list string="vechicle">
-                <field name="number"/>
+            <list string="vehicle">
+                <field name="vehicle_s_no"/>
                 <field name="vh_number"/>
-                <field name="vh_model"/>
+                <field name="vehicle_model"/>
                 <field name="capacity"/>
-                <field name="route"/>
+                <field name="route_id"/>
 
 
             </list>
         </field>
     </record>
 
-    <record id="action_transport_vechicle" model="ir.actions.act_window">
-        <field name="name">Vechicle</field>
-        <field name="res_model">transport.vechicle</field>
+    <record id="action_transport_vehicle" model="ir.actions.act_window">
+        <field name="name">vehicle</field>
+        <field name="res_model">transport.vehicle</field>
         <field name="view_mode">list,form</field>
-        <field name="view_id" ref="view_vechicle_list"/>
+        <field name="view_id" ref="view_vehicle_list"/>
     </record>
 </odoo>

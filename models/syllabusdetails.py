@@ -9,16 +9,16 @@ class SyllabusDetails(models.Model):
 
 
 
-    class_name = fields.Selection([
-        ('class one', 'Class One'),
-        ('class two', 'Class Two'),
-        ('class three', 'clas Three')
-    ], string='Class')
-
+    # class_name = fields.Selection([
+    #     ('class one', 'Class One'),
+    #     ('class two', 'Class Two'),
+    #     ('class three', 'clas Three')
+    # ], string='Class')
+    class_namess = fields.Many2one("academic.class","Class")
     section = fields.Selection(
         [("A", "A"), ("B", "B"), ("C", "C")], string="Section")
     title = fields.Char(string="Title")
-    subject = fields.Char(string='Subject')
+    subjects = fields.Many2one("academic.subject",string='Subject')
     upload_syllabus = fields.Binary(string="Upload Syllabus")
 
 

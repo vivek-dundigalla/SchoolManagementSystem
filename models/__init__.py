@@ -36,8 +36,11 @@ from . import syllabusdetails
 from . import onlinecourses
 from . import coursedetails
 from . import schoolsettings
-from .import subjectlines_
+# from .import subjectlines_
 from . import biometric_attendance
 from . import marks
 from . import marksdetails
 from . import assigning_students_to_drivers
+from .import send_exam_marks
+from . import transport_route
+from . import transport_vehiclemodel

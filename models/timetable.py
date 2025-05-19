@@ -8,15 +8,15 @@ class TimeTable(models.Model):
 
 
 
-    # class_name = fields.Many2one(comodel_name="academic.class"
-    #                           , string='Class')
+    class_names = fields.Many2one(comodel_name="academic.class"
+                              , string='Class')
     day = fields.Char(string='Day')
-    class_name = fields.Selection([
-        ('class one', 'Class One'),
-        ('class two', 'Class Two'),
-        ('class three', 'clas Three')
-    ], string='Class')
-    #
+    # class_name = fields.Selection([
+    #     ('class one', 'Class One'),
+    #     ('class two', 'Class Two'),
+    #     ('class three', 'clas Three')
+    # ], string='Class')
+    # #
     section = fields.Selection([
         ('a', 'A'),
         ('b', 'B'),

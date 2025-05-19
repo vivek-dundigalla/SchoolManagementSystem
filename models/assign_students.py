@@ -2,28 +2,26 @@ from odoo import models, fields,api
 
 class AssignStudents(models.Model):
     _name = 'transport.assign'
+    _rec_name = "category"
 
-    # class_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'clas Three')
-    # ], string='Class')
+    category =fields.Selection([('driver','Driver'),('class','Class'),('vehicle','Vehicle')])
+    # vh_model = fields.Many2one('transport.vehicle', string="Vehicle")
 
-    category =fields.Selection([('driver','Driver'),('class','Class'),('vechicle','Vechicle')])
-    vh_model = fields.Many2one('transport.vehicle', string="Vehicle")
-    student_class_number = fields.Many2one('school.admission', string="Class")
-    driver_name = fields.Many2one('school.drivers', string="Driver")
+    vehicle_model = fields.Many2one('transport.vehiclemodel', string="Vehicle Model")
+    student_class_number = fields.Many2one('academic.class', string="Class")
+    driver_names_id = fields.Many2one('school.drivers', string="Driver")
 
-    show_vehicle = fields.Boolean(compute="_compute_visibility")
-    show_class = fields.Boolean(compute="_compute_visibility")
-    show_driver = fields.Boolean(compute="_compute_visibility")
+    # show_vehicle = fields.Boolean(compute="_compute_visibility")
+    # show_class = fields.Boolean(compute="_compute_visibility")
+    # show_driver = fields.Boolean(compute="_compute_visibility")
 
-    @api.depends('category')
-    def _compute_visibility(self):
-        for rec in self:
-            rec.show_vehicle = rec.category == 'vehicle'
-            rec.show_class = rec.category == 'class'
-            rec.show_driver = rec.category == 'driver'
+
+    # @api.depends('category')
+    # def _compute_visibility(self):
+    #     for rec in self:
+    #         rec.show_vehicle = rec.category == 'Vehicle'
+    #         rec.show_class = rec.category == 'Class'
+    #         rec.show_driver = rec.category == 'Driver'
 
     def assign_student(self):
         return {
@@ -34,6 +32,17 @@ class AssignStudents(models.Model):
             'target': 'new',
 
         }
+
+    def filter(self):
+        for rec in self:
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Filtered Marks',
+                'res_model': 'transport.assignstudents',
+                'view_mode': 'list',
+                'domain': [('vehicle_model', '=', rec.vehicle_model.id),('student_class_number', '=', rec.student_class_number.id),('driver_names_id','=',rec.driver_names_id.id)],
+                'target': 'new',
+            }
 
 
 
