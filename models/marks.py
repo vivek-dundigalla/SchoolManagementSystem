@@ -2,6 +2,7 @@ from odoo import models, fields
 
 class Marks(models.Model):
     _name = 'exam.marks'
+    _rec_name = "student_class_number1"
 
 
     student_class_number1 = fields.Many2one("academic.class", store=True,string="Standard")

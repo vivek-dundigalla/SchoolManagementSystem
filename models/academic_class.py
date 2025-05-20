@@ -17,6 +17,10 @@ class Class(models.Model):
         ("II", "II"),
         ("I", "I")
     ], string="Class",  tracking=True)
-    section = fields.Char(string="Section")
+    section = fields.Selection([
+        ("A", "A"),
+        ("B", "B"),
+        ("C", "C")
+    ], string="Section",  tracking=True)
 
 

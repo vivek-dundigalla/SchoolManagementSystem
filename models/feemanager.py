@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 from datetime import time
 
 
@@ -17,7 +17,7 @@ class FeeManager(models.Model):
     total_amount = fields.Integer(string="Total_amount")
     paid_amount = fields.Integer(string='Paid Amount')
     status = fields.Selection(
-        [("All status", "All Status"), ("paid", "Paid"), ("unpaid", "Unpaid")], string="status")
+        [ ("paid", "Paid"), ("unpaid", "Unpaid")], string="status")
 
 
     def action_save_invoice(self):
@@ -35,5 +35,4 @@ class FeeManager(models.Model):
             'target': 'current',
 
         }
-
 
