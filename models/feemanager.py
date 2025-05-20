@@ -5,17 +5,18 @@ from datetime import time
 
 class FeeManager(models.Model):
     _name = 'accounting.feemanager'
-
+    _rec_name = "students"
 
 
     fee_lines=fields.Char("Lines")
-    class_name = fields.Selection([
-        ('class one', 'Class One'),
-        ('class two', 'Class Two'),
-        ('class three', 'clas Three')
-    ], string='Class')
+    # class_name = fields.Selection([
+    #     ('class one', 'Class One'),
+    #     ('class two', 'Class Two'),
+    #     ('class three', 'clas Three')
+    # ], string='Class')
+    class_name1=fields.Many2one("academic.class","Class")
     date =fields.Date(string="date")
-    student = fields.Char(string="Student")
+    students = fields.Many2one("school.student",string="Student")
 
     invoice_title = fields.Char( string='Invoice Title')
     total_amount = fields.Integer(string="Total_amount")

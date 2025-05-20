@@ -5,9 +5,7 @@
         <field name="model">transport.vehicle</field>
         <field name="arch" type="xml">
             <form string="vehicle">
-                <header>
-                    <button name="action_create_vehicle" string="+ Create vehicle" type="object" class="oe_highlight"/>
-                </header>
+<!--                    <button name="action_create_vehicle" string="+ Create vehicle" type="object" class="oe_highlight"/>-->
                 <sheet>
                     <group>
                         <group>

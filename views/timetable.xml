@@ -7,12 +7,12 @@
             <form string="Timetable">
                 <sheet>
                     <group>
-                        <field name="class_names"/>
+                        <field name="class_id"/>
                         <field name="section"/>
                         <field name="name"/>
                         <field name="teacher_name"/>
                         <field name="class_room"/>
-                        <field name="day"/>
+<!--                        <field name="day"/>-->
                         <field name="starting_hour"/>
                         <field name="ending_hour"/>
 
@@ -32,8 +32,8 @@
         <field name="model">academic.timetable</field>
         <field name="arch" type="xml">
             <list string="Timetable">
-                 <field name="day"/>
-                <field name="class_names"/>
+<!--                 <field name="day"/>-->
+                <field name="class_id"/>
                 <field name="section"/>
                 <field name="name"/>
                 <field name="teacher_name"/>

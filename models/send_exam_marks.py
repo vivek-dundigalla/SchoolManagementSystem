@@ -26,7 +26,7 @@ class send_exam_marks(models.Model):
     ], string="Select Section", tracking=True )
 
     receiver = fields.Selection([
-        ("Parent","Parent"),
+        # ("Parent","Parent"),
         ("Student","Student")
     ], string="Select Receiver", tracking=True )
 

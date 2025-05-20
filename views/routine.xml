@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
             <form string="Academic Routine">
                 <header>
-                    <button name="add_routine" string="+Add Routine" type="object" class="oe_highlight"/>
+                    <button name="add_routine" string="Add Routine" type="object" class="oe_highlight"/>
 
                 </header>
                 <sheet>
                     <group>
-                        <field name="class_number"/>
+                        <field name="class_number1"/>
                         <field name="section"></field>
                     </group>
                     <xpath expr="//field[@name='section']" position="after">
@@ -31,7 +31,7 @@
         <field name="model">academic.routine</field>
         <field name="arch" type="xml">
             <list string="Academic Routine">
-                <field name="class_number"/>
+                <field name="class_number1"/>
                 <field name="section"/>
             </list>
         </field>
@@ -43,6 +43,6 @@
     <record id="action_academic_routine" model="ir.actions.act_window">
         <field name="name">Routine</field>
         <field name="res_model">academic.routine</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

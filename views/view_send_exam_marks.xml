@@ -25,7 +25,7 @@
                        <field name="select_class"/>
                        <field name="section_1"/>
                        <field name="receiver"/>
-                       <field name="parent" invisible="receiver != 'Parent'"/>
+<!--                       <field name="parent" invisible="receiver != 'Parent'"/>-->
                        <field name="student" invisible="receiver != 'Student'"/>
                        <field name="marks"/>
                        <button name="send_marks" string="Send Marks" type="object" class="oe_highlight"/>

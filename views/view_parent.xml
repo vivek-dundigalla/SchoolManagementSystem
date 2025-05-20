@@ -25,7 +25,7 @@
         <field name="arch" type="xml">
             <list string="Parent">
                 <field name="parent_id"/>
-                <field name="parent_image" widget="image" class="oe_avatar"/>
+                <field name="parent_image" widget="image" options="{'size': [64, 64]}" class="oe_avatar"/>
                 <field name="parent_name"/>
                 <field name="email"/>
                 <field name="phone_number"/>

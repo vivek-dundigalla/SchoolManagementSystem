@@ -46,17 +46,17 @@ class Drivers(models.Model):
                 raise ValidationError("Vehicle number must be in format: 'TS 10 EQ 0297'")
 
 
-    def action_create_vehicle(self):
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Create Driver',
-            'res_model': 'transport.vehicle',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'default_vehicle_id': self.id
-            }
-        }
+    # def action_create_vehicle(self):
+    #     return {
+    #         'type': 'ir.actions.act_window',
+    #         'name': 'Create Driver',
+    #         'res_model': 'transport.vehicle',
+    #         'view_mode': 'form',
+    #         'target': 'new',
+    #         'context': {
+    #             'default_vehicle_id': self.id
+    #         }
+    #     }
 
     def action_create_route(self):
         return {

@@ -8,7 +8,7 @@ class Routine(models.Model):
     #     ('class two', 'Class Two'),
     #     ('class three', 'clas Three')
     # ], string='Class')
-    class_number=fields.Many2one("academic.class","Class")
+    class_number1=fields.Many2one("academic.class","Class")
     section = fields.Selection([
         ('a', 'A'),
         ('b', 'B'),
@@ -32,17 +32,25 @@ class Routine(models.Model):
     #     if self.section:
     #         domain.append(('section', '=', self.section))
 
+    # def filter_routine(self):
+    #     class_names = self.env.context.get('default_class_namess')
+    #     domain = []
+    #     if class_namess:
+    #         domain.append(('class_number1', '=', class_namess))  # Filter by class_name in 'academic.subject'
+
+
     def filter_routine(self):
-        class_names = self.env.context.get('default_class_name')
+        # Check if 'default_class_name' is in the context
+        class_id = self.env.context.get('default_class_id')
         domain = []
-        if class_names:
-            domain.append(('class_number', '=', class_names))  # Filter by class_name in 'academic.subject'
+        if class_id:
+            domain.append(('class_id', '=', class_id))  # Filter by class_name in 'academic.subject'
 
         return {
-            'type': 'ir.actions.act_window',
-            'name': 'Filtered Routines',
-            'res_model': 'academic.timetable',
-            'view_mode': 'list',
-            'domain': domain,
-            'target': 'current',
-        }
+        'type': 'ir.actions.act_window',
+        'name': 'Filtered Routines',
+        'res_model': 'academic.timetable',
+        'view_mode': 'list',
+        'domain': domain,
+        'target': 'current',
+    }

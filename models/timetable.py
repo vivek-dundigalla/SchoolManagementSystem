@@ -8,7 +8,7 @@ class TimeTable(models.Model):
 
 
 
-    class_names = fields.Many2one(comodel_name="academic.class"
+    class_id = fields.Many2one(comodel_name="academic.class"
                               , string='Class')
     day = fields.Char(string='Day')
     # class_name = fields.Selection([
@@ -24,7 +24,7 @@ class TimeTable(models.Model):
     ], string='Section')
     name = fields.Many2one(comodel_name="academic.subject"
                                  , string='Subject')
-    teacher_name = fields.Many2one(comodel_name="users.teachers"
+    teacher_name = fields.Many2one(comodel_name="hr.employee"
                               , string='Teacher')
     class_room = fields.Many2one(comodel_name="academic.room"
                                    , string='Class Room')

@@ -15,10 +15,13 @@
                       <field name="student_email"/>
                       <field name="student_password" widget="password" password="True"/>
                       <field name="parent"/>
+<!--                      <field name="parents"/>&ndash;&gt;-->
                       <field name="student_class_number1"/>
-                      <field name="student_class_number"/>
+<!--                      <field name="student_class_number"/>-->
                       <field name="student_section_ABC"/>
                       <field name="student_dob"/>
+                                            <field name="student_age"/>
+
                       <field name="student_gender"/>
                       <field name="student_blood_group"/>
                       <field name="student_address"/>
@@ -40,10 +43,11 @@
               <field name="student_email"/>
               <field name="student_password"/>
               <field name="student_class_number1"/>
-              <field name="student_class_number"/>
+<!--              <field name="student_class_number"/>-->
               <field name="student_section_ABC"/>
               <field name="student_gender"/>
               <field name="parent"/>
+<!--               <field name="parents"/>&ndash;&gt;-->
           </list>
       </field>
   </record>

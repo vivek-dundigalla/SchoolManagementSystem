@@ -3,11 +3,12 @@ from odoo import models, fields
 class OnlineCourses(models.Model):
     _name = 'online.course'
 
-    class_name = fields.Selection([
-        ('class one', 'Class One'),
-        ('class two', 'Class Two'),
-        ('class three', 'clas Three')
-    ], string='Class')
+    # class_name = fields.Selection([
+    #     ('class one', 'Class One'),
+    #     ('class two', 'Class Two'),
+    #     ('class three', 'clas Three')
+    # ], string='Class')
+    class_names=fields.Many2one("academic.class","Class")
 
     teacher_name = fields.Selection(
         [("priyanka","Priyanka"),("Nikhil Varma", "Nikhil Varma"),("Madhav","Madhav")] ,string ="Instructor")

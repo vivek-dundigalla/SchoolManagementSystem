@@ -34,15 +34,32 @@ class AssignStudents(models.Model):
         }
 
     def filter(self):
-        for rec in self:
-            return {
-                'type': 'ir.actions.act_window',
-                'name': 'Filtered Marks',
-                'res_model': 'transport.assignstudents',
-                'view_mode': 'list',
-                'domain': [('vehicle_model', '=', rec.vehicle_model.id),('student_class_number', '=', rec.student_class_number.id),('driver_names_id','=',rec.driver_names_id.id)],
-                'target': 'new',
-            }
+        domain = []
+        if self.category == 'vehicle' and self.vehicle_model:
+            domain.append(('vehicle_model', '=', self.vehicle_model.id))
+        elif self.category == 'class' and self.student_class_number:
+            domain.append(('student_class_number', '=', self.student_class_number.id))
+        elif self.category == 'driver' and self.driver_names_id:
+            domain.append(('driver_names_id', '=', self.driver_names_id.id))
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Filtered Students',
+            'res_model': 'transport.assignstudents',
+            'view_mode': 'list',
+            'domain': domain,
+            'target': 'current',
+        }
+    # def filter(self):
+    #     for rec in self:
+    #         return {
+    #             'type': 'ir.actions.act_window',
+    #             'name':"ASSIGNED STUDENTS",
+    #             'res_model': 'transport.assignstudents',
+    #             'view_mode': 'list',
+    #             'domain': [('vehicle_model', '=', rec.vehicle_model.id),('student_class_number', '=', rec.student_class_number.id),('driver_names_id','=',rec.driver_names_id.id)],
+    #             'target': 'new',
+    #         }
 
 
 
