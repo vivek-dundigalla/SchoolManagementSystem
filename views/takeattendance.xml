@@ -7,21 +7,19 @@
             <form string="Take Attendance">
                 <sheet>
                     <group>
-
                         <field name="date"/>
                         <field name="class_namess"/>
                         <field name="section"/>
-                                                <field name="student"/>
-
-                        <field name="attendance"/>
-
-
+                        <field name="student"/>
+                        <field name="attendance" widget="badge"
+                           decoration-success="attendance == 'Present'"
+                           decoration-danger="attendance == 'Absent'"/>
                     </group>
                 </sheet>
-                 <footer>
-            <button name="action_save_attendance" string="Save" type="object" class="btn-primary"/>
-            <button string="Cancel" class="btn-secondary" special="cancel"/>
-        </footer>
+                <footer>
+                    <button name="action_save_attendance" string="Save" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
             </form>
         </field>
     </record>
@@ -31,21 +29,16 @@
         <field name="model">academic.takeattendance</field>
         <field name="arch" type="xml">
             <list string="Take Attendance">
-                  <field name="date"/>
-                        <field name="class_namess"/>
-                        <field name="section"/>
-                                                                <field name="student"/>
-
-                        <field name="attendance"/>
-
-
-
+                <field name="date"/>
+                <field name="class_namess"/>
+                <field name="section"/>
+                <field name="student"/>
+                <field name="attendance" widget="badge"
+                           decoration-success="attendance == 'Present'"
+                           decoration-danger="attendance == 'Absent'"/>
             </list>
         </field>
-
     </record>
-
-
 
 
     <record id="action_academic_take_attendance" model="ir.actions.act_window">

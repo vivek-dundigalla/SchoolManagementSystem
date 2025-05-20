@@ -12,8 +12,6 @@ class biometricattendance(models.Model):
         if self.file:
             file_data = self.file
             file_extension = os.path.splitext(filename)[1].lower()
-
-            # Validate file extension
             if file_extension not in ['.xls', '.xlsx']:
                 raise ValidationError("The file must be an Excel file (.xls or .xlsx)")
 
@@ -22,13 +20,9 @@ class biometricattendance(models.Model):
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
-        # You can pass default values from context here if needed
         return res
 
     def upload_file(self):
-        # Handle the uploaded file here
-        # For example, parse the file or store it temporarily
-        # Implement your logic as needed
         return {'type': 'ir.actions.act_window_close'}
 
     def biometric_attendance(self):

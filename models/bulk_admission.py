@@ -24,13 +24,7 @@ class BulkStudentAdmission(models.Model):
                    'password': line.password,
                    'gender': line.gender,
                    'parent_id': line.parent_id.id,
-                   # 'parent_id': line.parent_id.id if line.parent_id else False,
-                   # Add other fields as needed
                })
-           # Bulk create the students in one go
-       # if student_vals_list:
-       #     student_model.create(student_vals_list)
-           # Unlink the processed bulk admission records
            self.unlink()
 
 
@@ -64,5 +58,4 @@ class BulkStudentAdmissionLine(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string="Gender")
-    # parent_id = fields.Many2one(string="Parent")
     parent_id = fields.Many2one(comodel_name="res.partner",string="Parent")

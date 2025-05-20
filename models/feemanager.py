@@ -9,11 +9,6 @@ class FeeManager(models.Model):
 
 
     fee_lines=fields.Char("Lines")
-    # class_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'clas Three')
-    # ], string='Class')
     class_name1=fields.Many2one("academic.class","Class")
     date =fields.Date(string="date")
     students = fields.Many2one("school.student",string="Student")
@@ -41,6 +36,4 @@ class FeeManager(models.Model):
 
         }
 
-    # def print_report(self):
-    #     return self.env.ref('SchoolManagementSystem.report_student_invoice_pdf').report_action(self)
 

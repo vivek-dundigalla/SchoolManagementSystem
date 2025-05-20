@@ -3,11 +3,7 @@ from odoo import models, fields
 class StudentFeeManager(models.Model):
     _name = 'accounting.fee'
 
-    # class_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'clas Three')
-    # ], string='Class')
+
     class_names=fields.Many2one("academic.class","Class")
     date = fields.Date( string='Date')
     status = fields.Selection(
@@ -32,20 +28,13 @@ class StudentFeeManager(models.Model):
             'target': 'new',
 
         }
-    #
-    # def filter_invoice(self):
-    #     domain = []
-    #     if self.class_names:
-    #         domain.append(('class_names', '=', self.class_names))
-    #     if self.date:
-    #         domain.append(('date', '=', self.date))
+
 
     def filter_invoice(self):
-            # Check if 'default_class_name' is in the context
             class_name1 = self.env.context.get('default_class_name1')
             domain = []
             if class_name1:
-                domain.append(('class_names', '=', class_name1))  # Filter by class_name in 'academic.subject'
+                domain.append(('class_names', '=', class_name1))
 
             return {
              'type': 'ir.actions.act_window',

@@ -1,7 +1,6 @@
 from odoo import models, fields
 
 
-
 class SchoolSettings(models.Model):
     _name = 'school.settings'
 

@@ -1,7 +1,5 @@
 from odoo import models, fields
 
-
-
 class CourseDetails(models.Model):
     _name = 'online.coursedetails'
 

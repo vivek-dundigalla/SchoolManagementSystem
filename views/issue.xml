@@ -8,14 +8,9 @@
                 <sheet>
                     <group>
                         <field name="date"/>
-                        <field name="name"/>
-                        <field name="student_class_number"/>
+                        <field name="student_name"/>
+                        <field name="class_number"/>
                         <field name="book_name"/>
-
-
-
-
-
                     </group>
                 </sheet>
                  <footer>
@@ -32,8 +27,8 @@
         <field name="arch" type="xml">
             <list string="Issues">
                   <field name="date"/>
-                        <field name="name"/>
-                        <field name="student_class_number"/>
+                        <field name="student_name"/>
+                        <field name="class_number"/>
                   <field name="book_name"/>
 
 

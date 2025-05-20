@@ -14,16 +14,13 @@
                         <field name="month"/>
                         <field name="year"></field>
                         <field name="class2"></field>
-
                         <field name="section"></field>
-
                     </group>
                     <xpath expr="//field[@name='section']" position="after">
                         <button name="filter_attendance" string="Filter" type="object" class="oe_highlight"/>
-
                     </xpath>
                 </sheet>
-<chatter/>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -32,15 +29,12 @@
         <field name="model">academic.attendance</field>
         <field name="arch" type="xml">
             <list string="Attendance">
-                 <field name="month"/>
-                        <field name="year"></field>
-                        <field name="class2"></field>
-
-                        <field name="section"></field>
+                <field name="month"/>
+                <field name="year"></field>
+                <field name="class2"></field>
+                <field name="section"></field>
             </list>
         </field>
-
-
     </record>
 
 

@@ -14,28 +14,12 @@ class Admission(models.Model):
     student_password = fields.Char(string="Password", password=True)
     parent = fields.Many2one(comodel_name="users.parents", string="Parent", tracking=True)
     student_class_number1 = fields.Many2one("academic.class", store=True, string="Standard")
-    # student_class_number = fields.Selection([
-    #     ("class Ten", "Class Ten"),
-    #     ("class Nine", "Class Nine"),
-    #     ("class Eight", "Class Eight"),
-    #     ("class Seven", "Class Seven"),
-    #     ("class Six", "Class Six"),
-    #     ("class Five", "Class Five"),
-    #     ("class Four", "Class Four"),
-    #     ("class Three", "Class Three"),
-    #     ("class Two", "Class Two"),
-    #     ("class One", "Class One")
-    # ], string="Class",  tracking=True)
-
     student_section_ABC = fields.Selection([
         ("A", "A"),
         ("B", "B"),
         ("C", "C")], string="Section", tracking=True)
-
-
     student_dob = fields.Datetime(string="Date of Birth", tracking=True)
     student_age = fields.Integer(string="Age", compute="_compute_age", store=True)
-
     student_gender = fields.Selection([("male", "Male"), ("female", "Female")], string="Gender", tracking=True)
     student_blood_group = fields.Selection([
         ("A+", "A+"), ("A-", "A-"), ("B+", "B+"), ("B-", "B-"),
@@ -89,15 +73,6 @@ class Admission(models.Model):
         })
 
         return admission
-    #
-    # def _compute_age(self):
-    #     for record in self:
-    #         if record.student_dob:
-    #             today = date.today()
-    #             age = (today - record.student_dob).days / 365.25  # Approximate age in years
-    #             record.student_age = int(age)  # Store the age as an integer
-    #         else:
-    #             record.student_age = 0  # If no DOB, set age to 0
 
     @api.constrains('student_email')
     def _check_email(self):

@@ -36,7 +36,6 @@ from . import syllabusdetails
 from . import onlinecourses
 from . import coursedetails
 from . import schoolsettings
-# from .import subjectlines_
 from . import biometric_attendance
 from . import marks
 from . import marksdetails

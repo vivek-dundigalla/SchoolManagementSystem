@@ -6,14 +6,6 @@ from datetime import time
 class FeeManager(models.Model):
     _name = 'accounting.massinvoice'
 
-
-
-
-    # class_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'clas Three')
-    # ], string='Class')
     class_names=fields.Many2one("academic.class","Class")
     section = fields.Char(string="Section")
     date =fields.Date(string="date")

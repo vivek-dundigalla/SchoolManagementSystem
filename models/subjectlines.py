@@ -3,20 +3,8 @@ from odoo import models, fields
 class SubjectLines(models.Model):
     _name = 'academic.subjectlines'
 
-    # class_name = fields.Selection([
-    #     ("Class Ten", "Class Ten"),
-    #     ("Class Nine", "Class Nine"),
-    #     ("Class Eight", "Class Eight"),
-    #     ("Class Seven", "Class Seven"),
-    #     ("Class Six", "Class Six"),
-    #     ("Class Five", "Class Five"),
-    #     ("Class Four", "Class Four"),
-    #     ("Class Three", "Class Three"),
-    #     ("Class Two", "Class Two"),
-    #     ("Class One", "Class One")
-    # ], string='Class')
-    class_names=fields.Many2one("academic.class","Class")
 
+    class_names=fields.Many2one("academic.class","Class")
     subject_ids = fields.Many2many('academic.subject', string='Subjects')
 
     def action_save_subject(self):
@@ -24,7 +12,7 @@ class SubjectLines(models.Model):
 
     def filter_subject(self):
         domain = []
-        if self.class_names:  # Filter subjects based on the selected class_name
+        if self.class_names:
             domain.append(('standard_names', '=', self.class_name))
 
         return {
@@ -32,7 +20,7 @@ class SubjectLines(models.Model):
             'name': 'Filtered Subjects',
             'res_model': 'academic.subjectlines.line',
             'view_mode': 'list,form',
-            'domain': domain,  # Show filtered subjects for the selected class
+            'domain': domain,
             'target': 'current',
         }
 

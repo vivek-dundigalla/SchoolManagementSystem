@@ -11,19 +11,6 @@ class Student(models.Model):
    email = fields.Char(string="Email")
    password = fields.Char(string="Password")
    parent_id = fields.Many2one('res.partner', string="Parent")
-   # student_class_number = fields.Selection([
-   #     ("Class Ten", "Class Ten"),
-   #     ("Class Nine", "Class Nine"),
-   #     ("Class Eight", "Class Eight"),
-   #     ("Class Seven", "Class Seven"),
-   #     ("Class Six", "Class Six"),
-   #     ("Class Five", "Class Five"),
-   #     ("Class Four", "Class Four"),
-   #     ("Class Three", "Class Three"),
-   #     ("Class Two", "Class Two"),
-   #     ("Class One", "Class One")
-   # ], string="Class")
-
    student_class_number1=fields.Many2one("academic.class","Class")
    section = fields.Selection([
        ("A", "A"),

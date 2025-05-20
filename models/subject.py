@@ -3,20 +3,8 @@ from odoo import models, fields
 class Subject(models.Model):
     _name = 'academic.subject'
 
-    name = fields.Char(string="Subject Name")  # Add the name field
+    name = fields.Char(string="Subject Name")
 
-    # standard_name = fields.Selection([
-    #     ("Class Ten", "Class Ten"),
-    #     ("Class Nine", "Class Nine"),
-    #     ("Class Eight", "Class Eight"),
-    #     ("Class Seven", "Class Seven"),
-    #     ("Class Six", "Class Six"),
-    #     ("Class Five", "Class Five"),
-    #     ("Class Four", "Class Four"),
-    #     ("Class Three", "Class Three"),
-    #     ("Class Two", "Class Two"),
-    #     ("Class One", "Class One")
-    # ], string='Class')
     standard_names=fields.Many2one("academic.class","Class")
 
     def add_subjects_for_all_classes(self):
@@ -42,12 +30,11 @@ class Subject(models.Model):
             "Class Ten"
         ]
 
-        # Create subjects for each class
         for class_name in classes:
             for subject in subjects:
                 self.env['academic.subject'].create({
                     'standard_names': class_name,
-                    'name': subject  # Assigning name for each subject
+                    'name': subject
                 })
 
     def add_subject(self):
@@ -63,11 +50,10 @@ class Subject(models.Model):
         }
 
     def filter_subject(self):
-        # Check if 'default_class_name' is in the context
         class_name = self.env.context.get('default_class_name')
         domain = []
         if class_name:
-            domain.append(('standard_names', '=', class_name))  # Filter by class_name in 'academic.subject'
+            domain.append(('standard_names', '=', class_name))
 
         return {
             'type': 'ir.actions.act_window',

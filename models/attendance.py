@@ -1,16 +1,11 @@
 from odoo import models, fields
+from datetime import date
+
 
 class Attendance(models.Model):
     _name = 'academic.attendance'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _rec_name = "month"# ✅ Add this
-
-
-    # class_name = fields.Selection([
-    #     ('class one', 'Class One'),
-    #     ('class two', 'Class Two'),
-    #     ('class three', 'clas Three')
-    # ], string='Class')
+    _rec_name = "month"
     month=fields.Selection([("January","January"),
                             ("Febraury","Febraury"),
                             ("March","March"),
@@ -35,22 +30,14 @@ class Attendance(models.Model):
             'res_model': 'academic.takeattendance',
             'view_mode': 'form',
             'target': 'new',
-
         }
 
-    # def filter_syllabus(self):
-    #     domain = []
-    #     if self.class_namess:
-    #         domain.append(('class_names', '=', self.class_names))
-    #     if self.section:
-    #         domain.append(('section', '=', self.section))
 
     def filter_attendance(self):
-        # Check if 'default_class_name' is in the context
         class_namess = self.env.context.get('default_class_namess')
         domain = []
         if class_namess:
-            domain.append(('class2', '=', class_namess))  # Filter by class_name in 'academic.subject'
+            domain.append(('class2', '=', class_namess))
 
         return {
         'type': 'ir.actions.act_window',

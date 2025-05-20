@@ -4,7 +4,6 @@ from odoo import models,fields,api
 
 class ExpenseCategory(models.Model):
     _name = "accounting.manager"
-    # _rec_name = "expense_name"
 
     date = fields.Date( string="Date", tracking=True)
     name = fields.Selection([

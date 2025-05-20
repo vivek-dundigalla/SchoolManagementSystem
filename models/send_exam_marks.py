@@ -32,14 +32,13 @@ class send_exam_marks(models.Model):
 
     parent = fields.Many2one(comodel_name="users.parents", string="Parents")
     student = fields.Many2one(comodel_name="school.student", string="students")
-    # marks = fields.Many2one(comedol_name="exam.markdetails", string="marks")
     marks = fields.Char(string="Marks",compute="get_marks")
 
 
     def send_marks(self):
         template = self.env.ref('SchoolManagementSystem.mail_template_receiver')
         if not template:
-            return  # or raise error or warning
+            return
         for record in self:
             template.send_mail(record.id, force_send=True)
 
