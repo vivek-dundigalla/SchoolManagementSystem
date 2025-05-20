@@ -1,7 +1,7 @@
 from odoo import models, fields
-
-
 from datetime import time
+
+
 
 class FeeManager(models.Model):
     _name = 'accounting.feemanager'
