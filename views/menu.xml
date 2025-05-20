@@ -33,6 +33,7 @@
     <menuitem id="menu_subjects" name="Subjects" action="action_academic_subject" parent="menu_school_Academic"/>
     <menuitem id="menu_syllabus" name="Syllabus" action="action_academic_syllabus" parent="menu_school_Academic"/>
     <menuitem id="menu_routine" name="Class Routine" action="action_academic_routine" parent="menu_school_Academic"/>
+    <menuitem id="menu_academic_attendance" name="Daily Attendance" action="action_academic_attendance" parent="menu_school_Academic"/>
 
     <!-- Back Office Menu -->
     <menuitem id="menu_school_backoffice" name="Back Office" parent="menu_school" sequence="50"/>

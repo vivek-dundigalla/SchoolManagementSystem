@@ -44,3 +44,5 @@ from . import assigning_students_to_drivers
 from .import send_exam_marks
 from . import transport_route
 from . import transport_vehiclemodel
+from . import attendance
+from . import takeattendance

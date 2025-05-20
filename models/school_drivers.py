@@ -1,17 +1,14 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 import re
-
-# from datetime import date, datetime
+from datetime import date, datetime
 
 class schooltransportdrivers(models.Model):
     _name = "school.drivers"
     _rec_name = "driver_name"
 
     driver_image = fields.Binary(string="Upload Image")
-    # driver_s_no = fields.Integer(string="S.no")
     driver_s_no = fields.Char(string="S.no", readonly=True, copy=False, default='New')
-    # driver_name = fields.Many2one(comodel_name="res.partner", string="Driver Name", tracking=True, required=True)
     driver_name = fields.Char(string="Driver Name", tracking=True, required=True)
     driver_email = fields.Char(string="Email", tracking=True, required=True)
     driver_number = fields.Char(string="Mobile Number")

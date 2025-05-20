@@ -33,6 +33,8 @@
         "views/subjectlines.xml",
         "views/syllabus.xml",
         "views/syllabusdetails.xml",
+        "views/takeattendance.xml",
+        "views/attendance.xml",
 
         # Exams and Marks
         "views/exam.xml",
