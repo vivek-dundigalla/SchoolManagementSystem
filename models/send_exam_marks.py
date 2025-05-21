@@ -33,7 +33,7 @@ class send_exam_marks(models.Model):
     parent = fields.Many2one(comodel_name="users.parents", string="Parents")
     student = fields.Many2one(comodel_name="school.student", string="students")
     marks = fields.Char(string="Marks",compute="get_marks")
-
+    comments=fields.Many2one("exam.markdetails","comment")
 
     def send_marks(self):
         template = self.env.ref('SchoolManagementSystem.mail_template_receiver')
@@ -49,6 +49,10 @@ class send_exam_marks(models.Model):
             mark_details=self.env['exam.marksdetails'].search([('name','=',rec.student.id)])
             for i in mark_details:
                 rec.marks = i.marks
+
+    def preview_marks(self):
+        report = self.env.ref('SchoolManagementSystem.report_student_marks_pdf')
+        return report.report_action(self)
 
 
 

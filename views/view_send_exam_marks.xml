@@ -29,6 +29,7 @@
                        <field name="student" invisible="receiver != 'Student'"/>
                        <field name="marks"/>
                        <button name="send_marks" string="Send Marks" type="object" class="oe_highlight"/>
+                       <button name="preview_marks" string="Preview" type="object" class="oe_highlight"/>
                    </group>
                </sheet>
                <chatter/>

@@ -80,6 +80,7 @@
         # Reports
         "report/report.xml",
         "report/report_fee_invoice_template.xml",
+        "report/report_student_marks_template.xml",
 
         # Settings & Menus
         "views/school_settings.xml",
