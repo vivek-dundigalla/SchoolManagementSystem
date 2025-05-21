@@ -57,5 +57,5 @@
 
     <!-- Online Course & Settings -->
     <menuitem id="menu_school_Online_Course" name="Online Course" action="action_online_courses" parent="menu_school" sequence="70"/>
-    <menuitem id="menu_school_Settings" name="School Settings" action="action_school_settings" parent="menu_school" sequence="80"/>
+<!--    <menuitem id="menu_school_Settings" name="School Settings" action="action_school_settings" parent="menu_school" sequence="80"/>-->
 </odoo>

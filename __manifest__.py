@@ -1,6 +1,6 @@
 {
     "name": "School Management System",
-    "author": "Vivek",
+    "author": "SIDMEC Technologies: Leading IT Solutions & Services",
     "version": "18.0",
     "license": "LGPL-3",
     "summary": "School Management",
