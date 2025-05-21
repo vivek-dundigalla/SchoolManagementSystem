@@ -29,6 +29,7 @@
                       <field name="student_image" widget="image" class="oe_avatar"/>
                   </group>
               </sheet>
+              <chatter/>
           </form>
       </field>
   </record>
@@ -50,6 +51,7 @@
 <!--               <field name="parents"/>&ndash;&gt;-->
           </list>
       </field>
+
   </record>
 
 

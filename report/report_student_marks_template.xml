@@ -36,9 +36,7 @@
                                         <td style="padding:10px; border:1px solid #ccc;">
                                             <span t-field="student.marks"/>
                                         </td>
-                                         <td style="padding:10px; border:1px solid #ccc;">
-                                            <span t-field="student.comments"/>
-                                        </td>
+
                                     </tr>
                                 </tbody>
                             </table>
