@@ -9,6 +9,7 @@
                     <group>
                         <field name="name"/>
                          <field name="student_class_number1"/>
+                        <field name="subject_ids"/>
                         <field name="marks"/>
                         <field name="grade_point"/>
                         <field name="comment"/>
@@ -32,6 +33,7 @@
                 <field name="name"/>
                 <field name="student_class_number1"/>
                 <field name="sections"/>
+                                        <field name="subject_ids"/>
 
                 <field name="marks"/>
                 <field name="grade_point"/>

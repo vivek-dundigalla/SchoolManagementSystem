@@ -11,7 +11,7 @@
               </header>
               <sheet>
                   <group>
-                      <field name="student_name"/>
+                      <field name="student"/>
                       <field name="student_email"/>
                       <field name="student_password" widget="password" password="True"/>
                       <field name="parent"/>
@@ -39,7 +39,7 @@
       <field name="model">school.admission</field>
       <field name="arch" type="xml">
           <list string="Bulk Student Admission">
-              <field name="student_name"/>
+              <field name="student"/>
               <field name="student_email"/>
               <field name="student_password"/>
               <field name="student_class_number1"/>

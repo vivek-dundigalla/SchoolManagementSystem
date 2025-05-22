@@ -12,10 +12,9 @@
                                     <tr style="color:orange; background-color:#f9f9f9;">
                                         <th style="padding:10px; border:1px solid #ccc;"><b>EXAM NAME</b></th>
                                         <th style="padding:10px; border:1px solid #ccc;"><b>CLASS</b></th>
-                                        <th style="padding:10px; border:1px solid #ccc;"><b>OBTAINED MARKS</b></th>
+                                        <th style="padding:10px; border:1px solid #ccc;"><b>SECTION</b></th>
                                         <th style="padding:10px; border:1px solid #ccc;"><b>STUDENT</b></th>
                                         <th style="padding:10px; border:1px solid #ccc;"><b>MARKS</b></th>
-                                        <th style="padding:10px; border:1px solid #ccc;"><b>COMMENT</b></th>
 
                                     </tr>
                                 </thead>
@@ -36,9 +35,7 @@
                                         <td style="padding:10px; border:1px solid #ccc;">
                                             <span t-field="student.marks"/>
                                         </td>
-                                         <td style="padding:10px; border:1px solid #ccc;">
-                                            <span t-field="student.comments"/>
-                                        </td>
+
                                     </tr>
                                 </tbody>
                             </table>

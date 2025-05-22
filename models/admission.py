@@ -7,9 +7,9 @@ from datetime import date
 
 class Admission(models.Model):
     _name = "school.admission"
-    _rec_name = "student_name"
+    _rec_name = "student"
 
-    student_name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
+    student = fields.Char( string="Student Name", tracking=True)
     student_email = fields.Char(string="Email", tracking=True)
     student_password = fields.Char(string="Password", password=True)
     parent = fields.Many2one(comodel_name="users.parents", string="Parent", tracking=True)
@@ -58,7 +58,7 @@ class Admission(models.Model):
         admission = super().create(vals)
 
         self.env['school.student'].create({
-            'name': admission.student_name.name,
+            'name': admission.student,
             'email': admission.student_email,
             'password': admission.student_password,
             'parent_id': admission.parent.id if admission.parent else False,

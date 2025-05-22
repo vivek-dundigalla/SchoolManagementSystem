@@ -9,7 +9,9 @@
                <field name="exam"/>
                <field name="select_class"/>
                <field name="section_1"/>
+               <field name="subject_ids"/>
                <field name="receiver"/>
+
            </list>
        </field>
    </record>
@@ -25,6 +27,8 @@
                        <field name="select_class"/>
                        <field name="section_1"/>
                        <field name="receiver"/>
+                                      <field name="subject_ids"/>
+
 <!--                       <field name="parent" invisible="receiver != 'Parent'"/>-->
                        <field name="student" invisible="receiver != 'Student'"/>
                        <field name="marks"/>

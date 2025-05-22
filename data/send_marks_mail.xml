@@ -60,7 +60,7 @@
 <!--                                        </table>-->
 
 
-                                        <p>Dear <span t-field="object.student.name"></span>,</p>
+                                        <p>Dear <span t-field="object.student"></span>,</p>
                                         <p>Your marks for the exam <strong><span t-field="object.exam"></span></strong> have been recorded.</p>
                                         <p>Marks: <span t-field="object.marks"></span></p>
                                         <p>Class: <span t-field="object.select_class"></span></p>
