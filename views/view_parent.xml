@@ -8,12 +8,11 @@
                 <sheet>
                     <group>
                         <field name="parent_id"/>
-                        <field name="parent_image" widget="image" class="oe_avatar"/>
                         <field name="parent_name"/>
                         <field name="email"/>
                         <field name="phone_number"/>
-
-
+                        <field name="student" widget="many2many_tags"/>
+                        <field name="parent_image" widget="image" class="oe_avatar"/>
                     </group>
                 </sheet>
             </form>
@@ -29,8 +28,7 @@
                 <field name="parent_name"/>
                 <field name="email"/>
                 <field name="phone_number"/>
-
-
+<!--                <field name="student"/>-->
             </list>
         </field>
     </record>

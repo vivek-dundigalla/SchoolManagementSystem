@@ -34,6 +34,27 @@ class send_exam_marks(models.Model):
     student = fields.Many2one(comodel_name="school.student", string="students")
     marks = fields.Char(string="Marks",compute="get_marks")
 
+    subject_ids = fields.Many2many("academic.subject", "Subject")
+
+    @api.depends('student', 'subject_ids')
+    def get_marks(self):
+        for rec in self:
+            marks_list = []
+
+            for subject in rec.subject_ids:
+                mark_detail = self.env['exam.marksdetails'].search([
+                    ('name', '=', rec.student.id),
+                    ('subject_ids', '=', subject.ids)  # not 'subject_ids'
+                ], limit=1)
+
+                if mark_detail:
+                    marks_list.append(f"{subject.name}: {mark_detail.marks}")
+                else:
+                    marks_list.append(f"{subject.name}: N/A")
+
+            # Join all subject marks into one string
+            rec.marks = ", ".join(marks_list) if marks_list else "No marks found"
+
     def send_marks(self):
         template = self.env.ref('SchoolManagementSystem.mail_template_receiver')
         if not template:
@@ -43,11 +64,11 @@ class send_exam_marks(models.Model):
 
 
 
-    def get_marks(self):
-        for rec in self:
-            mark_details=self.env['exam.marksdetails'].search([('name','=',rec.student.id)])
-            for i in mark_details:
-                rec.marks = i.marks
+    # def get_marks(self):
+    #     for rec in self:
+    #         mark_details=self.env['exam.marksdetails'].search([('name','=',rec.student.id)])
+    #         for i in mark_details:
+    #             rec.marks = i.marks
 
     def preview_marks(self):
         report = self.env.ref('SchoolManagementSystem.report_student_marks_pdf')

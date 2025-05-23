@@ -9,6 +9,13 @@
     "company": "Sidmec Technology",
     "depends": ["base", "mail","hr"],
 
+    'assets': {
+        'web.assets_backend': [
+            'SchoolManagementSystem/static/src/css/sidebar.css',
+            'SchoolManagementSystem/static/src/js/sidebar.js',
+        ],
+    },
+
     "data": [
         # Security
         "security/ir.model.access.csv",

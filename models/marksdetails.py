@@ -1,6 +1,4 @@
 from odoo import models, fields,api
-
-
 from datetime import time
 
 class SyllabusDetails(models.Model):
@@ -10,16 +8,16 @@ class SyllabusDetails(models.Model):
     name = fields.Many2one("school.student", string='Student Name' ,domain=[('student_class_number1','!=',False)])
     marks_id = fields.Many2one("exam.marks", string="Marks Reference")
     marks = fields.Integer(string="Marks")
-    grade = fields.Char(string="Grade", compute="_compute_grade", store=True)
-    grade_point = fields.Float(string="Grade Point", compute="_compute_grade", store=True)
+    grade = fields.Char(string="Grade", compute="_compute_grade")
+    grade_point = fields.Float(string="Grade Point", compute="_compute_grade")
     comment = fields.Char(string="Comment")
-    student_class_number1 = fields.Many2one("academic.class","Class",related="name.student_class_number1",store=True)
+    student_class_number1 = fields.Many2one("academic.class","Class",related="name.student_class_number1")
     sections = fields.Selection([
         ("A", "A"),
         ("B", "B"),
         ("C", "C")
     ], string="Section",store=True)
-
+    subject_ids = fields.Many2one("academic.subject", string="Subject")  # 🆕 Add this
     def action_save_marks(self):
         vals = {
             'name': self.name.id,

@@ -17,7 +17,7 @@ class BulkStudentAdmission(models.Model):
        for admission in self:
            for line in admission.admission_line_ids:
                student_model.create({
-                   'name': line.name.name,
+                   'name': line.name,
                    'student_class_number1': line.student_class_number1.id,
                    'section': line.section,
                    'email': line.email,
@@ -51,7 +51,7 @@ class BulkStudentAdmissionLine(models.Model):
         ("A", "A"),
         ("B", "B"),
         ("C", "C")], "Section", tracking=True, )
-    name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
+    name = fields.Char(string="Student Name", tracking=True)
     email = fields.Char(string="Email")
     password = fields.Char(string="Password", password=True)
     gender = fields.Selection([
@@ -59,3 +59,5 @@ class BulkStudentAdmissionLine(models.Model):
         ('female', 'Female'),
     ], string="Gender")
     parent_id = fields.Many2one(comodel_name="res.partner",string="Parent")
+
+

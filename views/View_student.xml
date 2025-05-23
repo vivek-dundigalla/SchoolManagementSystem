@@ -35,7 +35,6 @@
                         <field name="mobile_number"/>
                         <!--                       <field name="student_class_number"/>-->
                         <field name="student_class_number1"/>
-
                         <field name="section"/>
                         <field name="dob"/>
                         <field name="gender"/>
@@ -44,6 +43,21 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_custom_search" model="ir.ui.view">
+        <field name="name">search</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="mobile_number"/>
+                <field name="student_class_number1"/>
+                <field name="section"/>
+                <field name="gender"/>
+            </search>
         </field>
     </record>
 
