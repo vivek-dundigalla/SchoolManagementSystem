@@ -45,3 +45,5 @@ from . import transport_route
 from . import transport_vehiclemodel
 from . import attendance
 from . import takeattendance
+from . import School_dashboard
+

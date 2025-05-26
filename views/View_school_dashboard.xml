@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- List View -->
+    <record id="view_school_dashboard_list" model="ir.ui.view">
+        <field name="name">school.dashboard.list</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="name"/>
+                <field name="count"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_school_dashboard_kanban" model="ir.ui.view">
+        <field name="name">school.dashboard.kanban</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban create="false">
+                <field name="count"/>
+                <field name="group_type"/>
+                <field name="upcoming_event_list"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="o_kanban_card_header">
+                                <strong>
+                                    <t t-esc="record.group_type.raw_value"/>
+                                </strong>
+                            </div>
+                            <div class="o_kanban_card_body">
+                                <t t-if="record.group_type.raw_value == 'student'">🎓 Students:</t>
+                                <t t-if="record.group_type.raw_value == 'teacher'">👩‍🏫 Teachers:</t>
+                                <t t-if="record.group_type.raw_value == 'parent'">👨‍👩‍👧‍👦 Parents:</t>
+                                <t t-if="record.group_type.raw_value == 'driver'">🚍 Drivers:</t>
+                                <t t-if="record.group_type.raw_value == 'attendance'">
+                                    <div>
+                                        <t t-if="record.present_count">
+                                            ✅ Present:
+                                            <t t-esc="record.present_count.value"/>
+                                            <br/>
+                                        </t>
+                                        <t t-if="record.absent_count">
+                                            ❌ Absent:
+                                            <t t-esc="record.absent_count.value"/>
+                                        </t>
+                                    </div>
+                                </t>
+
+
+                                <t t-if="record.group_type.raw_value == 'event'">
+                                    <div>
+                                        <strong>📅 Upcoming Events:</strong>
+                                        <ul>
+                                            <t t-foreach="record.upcoming_event_list.value.split('\n')" t-as="line">
+                                                <li>
+                                                    <t t-esc="line"/>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </t>
+
+                                <t t-if="record.group_type.raw_value != 'event'">
+                                    <strong>
+                                        <t t-esc="record.count.value"/>
+                                    </strong>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- Graph View -->
+    <record id="view_school_dashboard_graph" model="ir.ui.view">
+        <field name="name">school.dashboard.graph</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <graph string="School Statistics" type="bar">
+                <field name="group_type" type="row"/>
+                <field name="count" type="measure" sum="True"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pie Chart View -->
+    <record id="view_school_dashboard_pie" model="ir.ui.view">
+        <field name="name">school.dashboard.pie</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <graph string="School Distribution" type="pie">
+                <field name="group_type" type="row"/>
+                <field name="count" type="measure" sum="True"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Form View with Upcoming Events -->
+<record id="view_school_dashboard_form" model="ir.ui.view">
+    <field name="name">school.dashboard.form</field>
+    <field name="model">school.dashboard</field>
+    <field name="arch" type="xml">
+        <form string="School Dashboard">
+            <group>
+                <field name="name"/>
+                <field name="group_type"/>
+                <field name="count"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+
+    <!-- Action -->
+    <record id="action_school_dashboard" model="ir.actions.act_window">
+        <field name="name">School Dashboard</field>
+        <field name="res_model">school.dashboard</field>
+        <field name="view_mode">kanban,list,form,graph</field>
+        <field name="view_id" ref="view_school_dashboard_kanban"/>
+        <field name="help" type="html">
+            <p>This dashboard shows the total number of students, teachers, parents, and drivers in separate boxes.</p>
+        </field>
+    </record>
+
+    <!-- Data: Group Records -->
+    <record id="school_dashboard_students" model="school.dashboard">
+        <field name="group_type">student</field>
+        <field name="name">Students</field>
+    </record>
+
+    <record id="school_dashboard_teachers" model="school.dashboard">
+        <field name="group_type">teacher</field>
+        <field name="name">Teachers</field>
+    </record>
+
+    <record id="school_dashboard_parents" model="school.dashboard">
+        <field name="group_type">parent</field>
+        <field name="name">Parents</field>
+    </record>
+
+    <record id="school_dashboard_drivers" model="school.dashboard">
+        <field name="group_type">driver</field>
+        <field name="name">Drivers</field>
+    </record>
+
+    <record id="school_dashboard_events" model="school.dashboard">
+        <field name="group_type">event</field>
+        <field name="name">Events</field>
+    </record>
+
+    <record id="school_dashboard_attendance" model="school.dashboard">
+        <field name="group_type">attendance</field>
+        <field name="name">Attendance</field>
+    </record>
+
+
+
+</odoo>

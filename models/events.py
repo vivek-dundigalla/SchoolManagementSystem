@@ -1,10 +1,17 @@
 from odoo import models,fields,api
-
 from datetime import date
 
 class Events(models.Model):
     _name = "users.events"
     _rec_name = "event_name"
+
+    upcoming_event_ids = fields.One2many(
+        'users.events',
+        compute='_compute_upcoming_events',
+        string='Upcoming Events',
+        store=False,
+        readonly=True
+    )
 
     event_image = fields.Binary(string="Photo")
     event_name = fields.Char( string="Event Title", tracking=True)

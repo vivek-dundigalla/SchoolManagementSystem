@@ -7,14 +7,8 @@
     "category": "Management",
     "description": """A Complete Custom Module for School Management""",
     "company": "Sidmec Technology",
-    "depends": ["base", "mail","hr"],
+    "depends": ["base", "mail", "hr"],
 
-    'assets': {
-        'web.assets_backend': [
-            'SchoolManagementSystem/static/src/css/sidebar.css',
-            'SchoolManagementSystem/static/src/js/sidebar.js',
-        ],
-    },
 
     "data": [
         # Security
@@ -25,6 +19,7 @@
 
         # Core Models
         "views/view_admission.xml",
+        "views/View_school_dashboard.xml",
         "views/bulk_admission.xml",
         "views/View_student.xml",
         "views/view_parent.xml",

@@ -11,9 +11,10 @@
                         <field name="class_namess"/>
                         <field name="section"/>
                         <field name="student"/>
-                        <field name="attendance" widget="badge"
-                           decoration-success="attendance == 'Present'"
-                           decoration-danger="attendance == 'Absent'"/>
+                        <field name="attendance"/>
+<!--                        <field name="attendance" widget="badge"-->
+<!--                           decoration-success="attendance == 'Present'"-->
+<!--                           decoration-danger="attendance == 'Absent'"/>-->
                     </group>
                 </sheet>
                 <footer>
