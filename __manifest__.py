@@ -7,13 +7,16 @@
     "category": "Management",
     "description": """A Complete Custom Module for School Management""",
     "company": "Sidmec Technology",
-    "depends": ["base", "mail","hr"],
+    "depends": ["base", "mail", "hr","board"],
 
     "data": [
         # Security
         "security/ir.model.access.csv",
+        "security/security.xml",
 
-        # Data
+
+
+# Data
         "data/send_marks_mail.xml",
 
         # Core Models
@@ -24,7 +27,6 @@
         "views/view_teachers.xml",
         "views/view_accountant.xml",
         "views/librarian.xml",
-
         # Academic
         "views/views_class.xml",
         "views/view_academic_room.xml",
@@ -81,9 +83,12 @@
         "report/report.xml",
         "report/report_fee_invoice_template.xml",
         "report/report_student_marks_template.xml",
-
+        "views/view_school_dashboard.xml",
         # Settings & Menus
         "views/school_settings.xml",
         "views/menu.xml",
+
+
+
     ],
 }

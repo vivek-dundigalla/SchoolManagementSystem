@@ -9,7 +9,7 @@
                     <group>
                         <field name="date"/>
 
-                        <field name="name"/>
+                        <field name="names"/>
                     </group>
                 </sheet>
             </form>
@@ -24,7 +24,7 @@
 
                         <field name="date"/>
 
-                        <field name="name"/>
+                        <field name="names"/>
 
             </list>
         </field>

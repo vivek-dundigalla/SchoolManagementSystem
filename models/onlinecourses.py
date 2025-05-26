@@ -2,7 +2,7 @@ from odoo import models, fields
 
 class OnlineCourses(models.Model):
     _name = 'online.course'
-
+    _rec_name = "status"
 
     class_names=fields.Many2one("academic.class","Class")
     teacher_name = fields.Selection(

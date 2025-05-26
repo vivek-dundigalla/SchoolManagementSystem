@@ -18,11 +18,11 @@
                            <list editable="bottom">
                                <field name="student_class_number1"/>
                                <field name="section"/>
-                               <field name="name"/>
+                               <field name="names"/>
                                <field name="email"/>
                                <field name="password" widget="password" password="True"/>
                                <field name="gender"/>
-                               <field name="parent_id"/>
+                               <field name="parent_ids"/>
                            </list>
                        </field>
                    </group>

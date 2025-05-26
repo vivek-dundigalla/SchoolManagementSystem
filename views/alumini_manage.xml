@@ -8,13 +8,13 @@
                 <field name="image" widget="image" class="oe_avatar"/>
                 <sheet>
                     <group>
-                        <field name="alumini_name"/>
+                        <field name="alumini"/>
                         <field name="student_code"/>
                         <field name="email"/>
                         <field name="phone_number"/>
                         <field name ="passing_session"/>
                         <field name ="profession"/>
-                        <field name = "file"/>
+<!--                        <field name = "file"/>-->
 
                     </group>
                 </sheet>
@@ -28,13 +28,13 @@
         <field name="arch" type="xml">
             <list string="AluminiManage">
                 <field name="image" widget="image" options="{'size': [64, 64]}" class="oe_avatar"/>
-                       <field name="alumini_name"/>
+                       <field name="alumini"/>
                         <field name="student_code"/>
                         <field name="email"/>
                         <field name="phone_number"/>
                         <field name ="passing_session"/>
                         <field name ="profession"/>
-                        <field name = "file"/>
+<!--                        <field name = "file"/>-->
             </list>
         </field>
     </record>

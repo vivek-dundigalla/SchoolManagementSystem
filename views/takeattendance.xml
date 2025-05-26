@@ -11,9 +11,10 @@
                         <field name="class_namess"/>
                         <field name="section"/>
                         <field name="student"/>
-                        <field name="attendance" widget="badge"
-                           decoration-success="attendance == 'Present'"
-                           decoration-danger="attendance == 'Absent'"/>
+<!--                        <field name="attendance" widget="badge"-->
+<!--                           decoration-success="attendance == 'present'"-->
+<!--                           decoration-danger="attendance == 'absent'"/>-->
+                        <field name="attendance"/>
                     </group>
                 </sheet>
                 <footer>
@@ -23,6 +24,29 @@
             </form>
         </field>
     </record>
+    <record id="view_attendance_pie_graph" model="ir.ui.view">
+    <field name="name">Attendance Graph</field>
+    <field name="model">academic.takeattendance</field>
+    <field name="arch" type="xml">
+        <graph string="Attendance Summary" type="bar">
+            <field name="attendance" type="row"/>
+            <field name="id" type="measure"/>
+                        <field name="date" type="col" interval="day"/>
+        </graph>
+    </field>
+</record>
+<record id="view_attendance_search" model="ir.ui.view">
+    <field name="name">academic.takeattendance.search</field>
+    <field name="model">academic.takeattendance</field>
+    <field name="arch" type="xml">
+        <search string="Search Attendance">
+            <field name="date" filter_domain="[]" string="Date"/>
+            <filter name="group_by_date" string="Group by Date" context="{'group_by': 'date'}"/>
+        </search>
+    </field>
+</record>
+
+
 
     <record id="view_take_attendance_list" model="ir.ui.view">
         <field name="name">Take Attendance</field>
@@ -34,8 +58,12 @@
                 <field name="section"/>
                 <field name="student"/>
                 <field name="attendance" widget="badge"
-                           decoration-success="attendance == 'Present'"
-                           decoration-danger="attendance == 'Absent'"/>
+                           decoration-success="attendance == 'present'"
+                           decoration-danger="attendance == 'absent'"/>
+
+<!--                <field name="attendance" widget="badge"-->
+<!--                           decoration-success="attendance == 'present'"-->
+<!--                           decoration-danger="attendance == 'absent'"/>-->
             </list>
         </field>
     </record>

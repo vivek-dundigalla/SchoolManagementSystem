@@ -35,27 +35,27 @@ class BulkStudentAdmissionLine(models.Model):
     admission_id = fields.Many2one('bulk.student.admission', string='Admission Reference')
     student_class_number1 = fields.Many2one("academic.class", store=True, string="Standard")
 
-    class_number = fields.Selection([
-        ("Class Ten", "Class Ten"),
-        ("Class Nine", "Class Nine"),
-        ("Class Eight", "Class Eight"),
-        ("Class Seven", "Class Seven"),
-        ("Class Six", "Class Six"),
-        ("Class Five", "Class Five"),
-        ("Class Four", "Class Four"),
-        ("Class Three", "Class Three"),
-        ("Class Two", "Class Two"),
-        ("Class One", "Class One")
-    ], string="Class", tracking=True)
+    # class_number = fields.Selection([
+    #     ("Class Ten", "Class Ten"),
+    #     ("Class Nine", "Class Nine"),
+    #     ("Class Eight", "Class Eight"),
+    #     ("Class Seven", "Class Seven"),
+    #     ("Class Six", "Class Six"),
+    #     ("Class Five", "Class Five"),
+    #     ("Class Four", "Class Four"),
+    #     ("Class Three", "Class Three"),
+    #     ("Class Two", "Class Two"),
+    #     ("Class One", "Class One")
+    # ], string="Class", tracking=True)
     section = fields.Selection([
         ("A", "A"),
         ("B", "B"),
         ("C", "C")], "Section", tracking=True, )
-    name = fields.Many2one(comodel_name="res.partner", string="Student Name", tracking=True)
+    names = fields.Many2one(comodel_name="school.student", string="Student Name", tracking=True)
     email = fields.Char(string="Email")
     password = fields.Char(string="Password", password=True)
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
     ], string="Gender")
-    parent_id = fields.Many2one(comodel_name="res.partner",string="Parent")
+    parent_ids = fields.Many2one(comodel_name="users.parents",string="Parent")

@@ -1,7 +1,6 @@
 from odoo import models, fields
 
 
-
 from datetime import date
 
 class TakeAttendance(models.Model):

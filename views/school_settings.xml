@@ -4,7 +4,7 @@
         <field name="name">school.settings.form</field>
         <field name="model">school.settings</field>
         <field name="arch" type="xml">
-            <form string="School Settings">
+            <form string="School Settings" create="false">
                 <sheet>
                     <group>
                         <field name="school_name"/>
